@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How Javascript Works Behind The Scenes - The Execution Context and the
+      Call Stack
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">The Execution Context and the Call Stack</h1>
+    <script>
+      /**
+       * Execution Context (It is an Abstract Concept)
+       * we know that all the JS code executed by call stack
+       *
+       * How Call Stack Executes the code ?
+       * -- So Just Before Execution a Execution context (it has two componenet memory componenet or Variable Envirnment and code componenet or Thread of Execution) were created it has two phases :
+       * Memory Creation phase
+       * -- where all variables and  functions were allocated or created
+       *
+       * Code Execution Phase
+       * -- where the code will executed
+       *
+       * On page load a global execution context were placed inside call stack after encountring each new function a new execution context were stacked over the prev execution context and then call stack executes the code and pop out the execution context until it becomes empty
+       *
+       * CALL STACK
+       * -- Maintain the order of execution of the execution Context
+       *
+       * -------------------------------------------
+       * |  Memory               |           Code  |
+       * | ----------------------|-----------------|
+       * |  a : undefined        |                 |
+       * |                       |                 |
+       * |  b : {whole function} |                 |
+       * |                       |                 |
+       * -------------------------------------------
+       */
+
+      //   var n = 2;
+
+      //   function square(num) {
+      //     var ans = num * num;
+      //     return ans;
+      //   }
+
+      //   var square2 = square(n);
+      //   var square4 = square(4);
+
+      // var name = "Abhishek";
+
+      // function first() {
+      //   var a = 1;
+      //   var b = second(5, 4);
+
+      //   return a + b;
+      // }
+
+      // function second(n, m) {
+      //   var c = n + m;
+      //   return c;
+      // }
+
+      // var x = first();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Enhanced Object Literals
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Enhanced Object Literals</h1>
+    <script>
+      "use strict";
+      /**
+       * Enhanced Object Literals -- ES6
+       *
+       * -- if you have same property name as variable name then you can simply place variable js will automatically create the same propertyname same as variable name
+       * -- second enhancement to function expression (you dont need to assign propertyname or function keyword)
+       * -- third enhancement is we can compute propertyname (just use [] and put any expression here)
+       */
+      const weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+      const openingHours = {
+        [weekDays[3]]: {
+          open: 12,
+          close: 22,
+        },
+        [weekDays[4]]: {
+          open: 11,
+          close: 23,
+        },
+        [weekDays[5]]: {
+          open: 0, //open 24 hours
+          close: 24,
+        },
+      };
+
+      const restaurant = {
+        name: "Classico Italian",
+        location: "New Delhi, Shimla, Mumbai",
+        categories: ["Indian", "South Indian", "Chinese", "Italian"],
+        starterMenu: ["Chilli Potato", "Garlic Bread", "kabab", "Paneer Tikka"],
+        mainMenu: ["Pizza", "Pasta", "Chowmein"],
+
+        // openingHours : openingHours,
+        openingHours, //ES6 Enhanced Object Literals
+
+        order(starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+
+        orderdelivery({
+          starterIndex = 1,
+          mainIndex = 0,
+          address,
+          time = "20:00",
+        }) {
+          console.log(
+            `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+          );
+        },
+
+        orderPasta(ing1, ing2, ing3) {
+          console.log(
+            `Here is your delicious Pasta with ${ing1}, ${ing2}, ${ing3}`
+          );
+        },
+
+        orderPizza(mainIngredient, ...otherIngredients) {
+          console.log(mainIngredient);
+          console.log(otherIngredients);
+        },
+      };
+    </script>
+  </body>
+</html>

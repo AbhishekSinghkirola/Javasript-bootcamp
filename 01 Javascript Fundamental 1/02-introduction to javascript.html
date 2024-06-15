@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 1 - Introduction to Javascript</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Introduction to Javascript</h1>
+    <script>
+      /**
+       * Javascript - Js is a hight lavel, object oriented, multi-paradigm programming language
+       * programming language - It is basically a tool that allow us to write code that will instruct to computer to do something
+       * high level language thats why we do not worry about the computer memory while running the program
+       * object oriented - based on concepts of objects
+       * Multi paradiagm - its is so  flexible and verstile such as we can use all kinds of programming styles such as imperatieva and declarative programming styles , different way of destructuring our code
+       * imperative way - instruct computer  what you want and f=get the desired output
+       * declarative way - tell the computer what you want
+       **/
+
+      //example of imperativee programming
+      const array = [1, 2, 3, 4];
+      const result = [];
+      for (let i = 0; i < array.length; i++) {
+        result.push(array[i] * 2);
+      }
+      console.log(result);
+
+      //  example of declarative way - we use a high order function given by language
+      let result2 = array.map((value) => {
+        return value * 2;
+      });
+      console.log(result2);
+
+      /**
+        * Role Of JS in web Development
+        * 
+        * HTML , CSS and JS these three technollogies worked together to build a beautiful user interactive website
+        * 
+        * Here, HTML is responsible for the content of the page - text, images, videos etx
+        * CSS is responsible for the presentation - style color , laying out the elements
+        * JS is responsible add dynamic and interactive effect to web page, also use to manipulate css , load data from remote servers
+        
+        */
+    </script>
+  </body>
+</html>

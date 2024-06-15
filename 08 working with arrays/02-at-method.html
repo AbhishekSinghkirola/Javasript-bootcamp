@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working With Arrays - At Method</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">At Method</h1>
+    <script>
+      "use strict";
+      /*
+        A New 'AT' Method
+
+        Return the array element in given index
+
+        Also Works on string
+      */
+
+      // Working of AT on arrays
+      console.log("----------------- At on Arrays -----------------------");
+      const arr = [23, 11, 64];
+      console.log("Get The value of 1st Element", arr[0]);
+      console.log(
+        "Get the 1st Value Using At Method (return the array element with argument as index) :",
+        arr.at(0)
+      );
+
+      console.log("Getting Last Element : ", arr[arr.length - 1]);
+      console.log(
+        "Getting Last Element Using SLICE Method : ",
+        arr.slice(-1)[0]
+      );
+      console.log("Getting Last Element Using AT Method : ", arr.at(-1));
+      console.log("Getting Last Second Element Using AT Method : ", arr.at(-2));
+
+      console.log("Return Undefined if not Exsist : ", arr.at(4));
+
+      // Working of AT on Strings
+      console.log("---------------- At On Strings -----------------");
+      console.log("Last Element of a String");
+      console.log("Abhishek".at(-1));
+    </script>
+  </body>
+</html>

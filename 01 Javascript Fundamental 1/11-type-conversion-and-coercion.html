@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Type Conversion and Coercion</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Type Conversion and Coercion</h1>
+    <script>
+      //Type Conversion and type coercion
+      console.log(
+        `Type Conversion is basically we maually change the type of variable and on the other hand type coersion is that js automaticall changes the type behind the scenes`
+      );
+
+      // Type Conversion
+      const inputYear = "1999";
+      console.log(Number(inputYear), inputYear);
+      console.log(Number(inputYear) + 18);
+
+      console.log(String(21), 21);
+
+      // Type Coercion
+      console.log("I am " + 23 + " Years Old"); //Here the + operator do the type coercion changes number to string to produce final sting
+      //It would be like that
+      console.log("I am " + "23" + " years Old");
+      // If Js do not have type coercion the we do that manually to get the desired output
+      console.log("I am " + String(23) + " Years Old");
+
+      console.log("23" - "10" - 3); //- do reverse convert string to number
+      console.log("23" + "10" + 3); // convert it to string
+      console.log("23" * "2"); //convert to number
+      console.log("23" / "2"); //convert to number
+      let n = "1" + 1;
+      n = n - 1;
+      console.log(n);
+      console.log(2 + 3 + 4 + "5");
+      console.log("10" - "4" - "2" + "5");
+    </script>
+  </body>
+</html>

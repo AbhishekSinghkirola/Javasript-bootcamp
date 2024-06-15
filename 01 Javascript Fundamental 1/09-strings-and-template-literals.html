@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Strings and Template Literals</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Strings and Template Literals</h1>
+    <script>
+      console.log("String Literals Come in ES6");
+      const firstName = "Abhishek";
+      const birthYear = 2001;
+      const job = "Teacher";
+      const currentYear = 2023;
+
+      const abhishek =
+        "I'm " +
+        firstName +
+        " my age is " +
+        (currentYear - birthYear) +
+        " and my job is " +
+        job;
+      console.log(abhishek);
+
+      const abhishekNew = `I'm ${firstName} my age is ${
+        currentYear - birthYear
+      } and my profession is ${job}`;
+
+      console.log(abhishekNew);
+
+      const string = "String with \nMultiple \nLine";
+      console.log(string);
+
+      const stringNew = `String
+With
+Multiple Line
+      `;
+      console.log(stringNew);
+
+      const regularString = `A regular String using String Literals`;
+      console.log(regularString);
+    </script>
+  </body>
+</html>

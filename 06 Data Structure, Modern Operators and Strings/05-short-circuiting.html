@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Short Circuiting (&& and
+      || and ??)
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Short Circuiting (&& and || and ??)</h1>
+    <script>
+      "use strict";
+      /**
+       * And (&&) or OR (||) Operator
+       * use any data type, return any data type or short circuiting
+       */
+
+      //  If it get first value true then it will return that value
+      console.log(3 || "Jonas");
+      console.log("Jonas" || 3);
+      console.log("" || "Jonas");
+      console.log(true || 0);
+      console.log(undefined || null);
+      console.log(null || undefined);
+      console.log(false || 0);
+      console.log(0 || false);
+      console.log(undefined || 0 || "" || "hello" || 23 || null);
+
+      const restaurant = {
+        name: "Classico Italian",
+        location: "New Delhi, Shimla, Mumbai",
+        categories: ["Indian", "South Indian", "Chinese", "Italian"],
+        starterMenu: ["Chilli Potato", "Garlic Bread", "kabab", "Paneer Tikka"],
+        mainMenu: ["Pizza", "Pasta", "Chowmein"],
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 22,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0, //open 24 hours
+            close: 24,
+          },
+        },
+
+        order: function (starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+
+        orderdelivery: function ({
+          starterIndex = 1,
+          mainIndex = 0,
+          address,
+          time = "20:00",
+        }) {
+          console.log(
+            `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+          );
+        },
+
+        orderPasta: function (ing1, ing2, ing3) {
+          console.log(
+            `Here is your delicious Pasta with ${ing1}, ${ing2}, ${ing3}`
+          );
+        },
+
+        orderPizza: function (mainIngredient, ...otherIngredients) {
+          console.log(mainIngredient);
+          console.log(otherIngredients);
+        },
+      };
+
+      // restaurant.numGuests = 23;
+      // restaurant.numGuests = 0;
+      // const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+      // console.log(guests1);
+
+      // const guests2 = restaurant.numGuests || 10;
+      // console.log(guests2);
+
+      console.log("--- AND ---");
+      console.log(0 && "Abhishek");
+      console.log(7 && "Abhishek");
+      console.log("HELLO" && 23 && null && "Jonas");
+
+      if (restaurant.orderPizza1) {
+        restaurant.orderPizza("Mushrooms", "Spinach");
+      }
+
+      restaurant.orderPizza && restaurant.orderPizza("Mushrooms", "Spinach");
+
+      4 % 2 === 0 && console.log("Even");
+
+      console.log("--- Nullish Coalescing ---");
+      restaurant.numGuests = 0;
+
+      // Nullish : undefined or null -- NOT 0
+      const guests2 = restaurant.numGuests ?? 10;
+      console.log(guests2);
+    </script>
+  </body>
+</html>

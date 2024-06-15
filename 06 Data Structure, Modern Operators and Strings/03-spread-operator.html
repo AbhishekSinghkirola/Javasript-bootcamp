@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Spread Operator
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Spread Operator</h1>
+    <script>
+      "use strict";
+      /**
+       * Spread Operator
+       * -- used to expand all
+       * basically used to unpacking all the array elements into one
+       *
+       * we have an eg called 'arr' so how to copy into new element : first to do manually separately called 'badNewArr', second by using loop and the good or new way to do it is spread operator 'newArr'
+       *
+       * USES OF SPREAD OPERATOR
+       * -- making shallow copies of arrays
+       * -- Merging two arrays together
+       *
+       * In all iterables like arrays, strings, sets, maps but not object are iterables we can use spread operator
+       *
+       * Since ES2018 spread operators also worked on objects even though objects are not iterable
+       */
+
+      const restaurant = {
+        name: "Classico Italian",
+        location: "New Delhi, Shimla, Mumbai",
+        categories: ["Indian", "South Indian", "Chinese", "Italian"],
+        starterMenu: ["Chilli Potato", "Garlic Bread", "kabab", "Paneer Tikka"],
+        mainMenu: ["Pizza", "Pasta", "Chowmein"],
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 22,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0, //open 24 hours
+            close: 24,
+          },
+        },
+
+        order: function (starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+
+        orderdelivery: function ({
+          starterIndex = 1,
+          mainIndex = 0,
+          address,
+          time = "20:00",
+        }) {
+          console.log(
+            `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+          );
+        },
+
+        orderPasta: function (ing1, ing2, ing3) {
+          console.log(
+            `Here is your delicious Pasta with ${ing1}, ${ing2}, ${ing3}`
+          );
+        },
+      };
+
+      const arr = [7, 8, 9];
+
+      // const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+      // console.log(badNewArr);
+
+      const newArr = [1, 2, ...arr];
+      console.log(newArr);
+      console.log(...newArr); //Expanding All array Individually
+
+      // Create a New Menu from the restaurant Menu (Not Manipulation the original one)
+      const newMenu = [...restaurant.mainMenu, "Dosa"];
+      console.log(newMenu);
+
+      // Shallow Copy Arrays
+      const mainMenuCopy = [...restaurant.mainMenu];
+      console.log(mainMenuCopy);
+
+      // Join two arrays
+      const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+      console.log(menu);
+
+      // Spread operator in strings
+      const str = "Abhishek";
+      const letters = [...str, "", "S."];
+      console.log(letters);
+      console.log(...str);
+      ("");
+      // Spread Operator in functions
+      // const ingredients = [
+      //   prompt("Let's Make Pasta! Ingredient 1?"),
+      //   prompt("Ingredient 2?"),
+      //   prompt("Ingredient 3?"),
+      // ];
+      // console.log(ingredients);
+      // restaurant.orderPasta(...ingredients);
+
+      // Spread Operator in Objects
+      const newRestaurant = {
+        foundIn: 1998,
+        ...restaurant,
+        founder: "Michael",
+      };
+      console.log(newRestaurant);
+
+      const restaurantCopy = { ...restaurant };
+      restaurantCopy.name = "Restro Vista";
+      console.log(restaurant.name, restaurantCopy.name);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Numbers, Dates, Intl and Timers - Internationalization Numbers
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Internationalization (INTL) Numbers</h1>
+    <script>
+      "use strict";
+      /**
+       * Internationalization Numbers
+       *
+       * It is an APi which support language specific things
+       */
+
+      const num = 343434.533;
+
+      const options = {
+        // style: "unit",
+        // unit: "mile-per-hour",
+
+        // style : 'temperature',
+
+        style: "currency",
+        currency: "EUR",
+
+        // useGrouping: false,
+      };
+
+      console.log(
+        "US      :",
+        new Intl.NumberFormat("en-uS", options).format(num)
+      );
+      console.log(
+        "Germany :",
+        new Intl.NumberFormat("de-DE", options).format(num)
+      );
+      console.log(
+        "Syria   :",
+        new Intl.NumberFormat("ar-SY", options).format(num)
+      );
+      console.log(
+        navigator.language,
+        new Intl.NumberFormat(navigator.language, options).format(num)
+      );
+    </script>
+  </body>
+</html>

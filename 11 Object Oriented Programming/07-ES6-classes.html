@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Object Oriented Programming - ES6 Classes
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">ES6 Classes</h1>
+    <script>
+      "use strict";
+      /**
+       * ES6 Classes
+       *
+       * Classes in Js do not work like traditional classes like in Java or c++
+       *
+       * Althought Classes in JS is synthetic sugar for constructor function ie. behind the scenes it will work as constructor functions
+       *
+       * class is a special type of functions that's why class keyword were used and also that's why we have class expressions and class declarations
+       *
+       *
+       * -- Classes are not Hoisted
+       * -- Classes are also first class citizens
+       * -- Classes are executed in strict mode
+       */
+
+      //  class Expression
+      // const PersonCl = class {
+
+      // }
+      //  Class Declarations
+      class PersonCl {
+        constructor(firstName, birthYear) {
+          this.firstName = firstName;
+          this.birthYear = birthYear;
+        }
+
+        // Methods will be added to the prototype property of the class
+        calcAge() {
+          console.log(2037 - this.birthYear);
+        }
+
+        greet() {
+          console.log(`Hey ${this.firstName}`);
+        }
+      }
+
+      const jessica = new PersonCl("Jessica", 1991);
+      console.log(jessica);
+      jessica.calcAge();
+
+      console.log(jessica.__proto__ === PersonCl.prototype);
+
+      // PersonCl.prototype.greet = function () {
+      //   console.log(`Hey ${this.firstName}`);
+      // };
+
+      jessica.greet();
+    </script>
+  </body>
+</html>

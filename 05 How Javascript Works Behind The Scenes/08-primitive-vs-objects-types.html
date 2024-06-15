@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How Javascript Works Behind The Scenes - Primitive vs object</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Primitive vs object (Primitive vs Reference)
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * How Primitive and object type have stored in memory
+       * if we copy primitive type in othe ones and change the any of them it will not affect the other one but in case of objects it will changed
+       *
+       * In memory pritive called by primitive types(int, bool, string, symbol, undefined, bigint) and objects called by Reference types (objects literals, functions, arrays, many more...)
+       *
+       * Js Engine have two components - call stack where functions were executed and the Heap ehre all the objects or refernce types were stored an dprimitive or primitive types are stored in the call stack
+       *
+       * In the case of primitive type the have a identifier with address and the value and then we copy the first one then it create an identifier in the call stack with the same memory or same value and then we change the value of first one then it create a new address with new value but the prev one still same
+       *
+       * In the case of objects we create an object it will create an identifier in the call stack with address and then in the place of value it stores the address of the heap then we copy it to another it create and identifier pointind the same address and same heap so thats why the change occur in heap and heap will be same for both so value changes in both the object
+       *
+       * If you cpoy the entire object then use Object.assign() it will create a shallow copy of the object but if u have nested object it wont work for them then u need different methods or libraries to deep cloning
+       */
+
+      //   let age = 30;
+      //   let oldAge = age;
+      //   age = 31;
+      //   console.log(age);
+      //   console.log(oldAge);
+
+      //   const me = {
+      //     name: "Abhihsek",
+      //     age: 30,
+      //   };
+
+      //   const friends = me;
+      //   friends.age = 27;
+
+      //   console.log("Friend : ", friends);
+      //   console.log("Me :", me);
+
+      //   const arr = [1, 2, 3];
+      //   const arr2 = arr;
+
+      //   arr[0] = 9;
+      //   arr2[1] = 90;
+      //   console.log(arr, arr2);
+
+      //   const obj = {
+      //     a: 10,
+      //     b: 20,
+      //     // But nested objects
+      //     d: [1, 2, 3],
+      //   };
+
+      //   const copyObj = Object.assign({}, obj);
+      //   copyObj.c = 30;
+      //   //   Not for nested objects
+      //   copyObj.d.push(4, 5);
+      //   console.log(obj, copyObj);
+    </script>
+  </body>
+</html>

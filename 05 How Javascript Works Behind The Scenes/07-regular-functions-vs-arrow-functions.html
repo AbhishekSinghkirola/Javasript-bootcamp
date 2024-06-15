@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How Javascript Works Behind The Scenes - Regular Functions vs Arrow
+      Functions
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Regular Functions vs Arrow Functions</h1>
+    <script>
+      "use strict";
+
+      //   If you use arrow function inside obj and use this keyword it points to the this keyword from its surrounding function; so use function expression here
+      //   const obj = {
+      //     name: "Abhishek",
+      //     birthYear: 2001,
+      //     calcAge: () => {
+      //       console.log(this);
+      //       return 2023 - this.birthYear;
+      //     },
+      //   };
+
+      // console.log(obj.calcAge());
+
+      //   If you create a function inside a function in object and call it there also then it will not take this is undefined
+      // So there are two solution first create self keyword and put this to it and another option to use arrow function becz it take this of its parent
+      // const obj = {
+      //   name: "Abhishek",
+      //   birthYear: 2001,
+      //   calcAge: function () {
+      //     // console.log(this);
+      //     // return 2023 - this.birthYear;
+      //     // 1.
+      //     // const self = this;
+      //     // const isMillenal = function () {
+      //     //   // console.log(this);
+      //     //   console.log(self);
+      //     //   // console.log(this.year >= 1981 && this.year <= 1986);
+      //     // };
+      //     // const isMillenal = () => {
+      //     //     console.log(this);
+      //     // }
+      //     isMillenal();
+      //   },
+      // };
+
+      // obj.calcAge();
+
+      // Normal functions have argumnets keyword but arrow function dont
+
+        // const add = function (a, b) {
+        //   console.log(arguments);
+        //   return a + b;
+        // };
+
+      //   const add2 = (a,b) => {
+      //     // console.log(arguments); //error
+      //     return a + b;
+      //   };
+
+        // console.log(add(2, 3, 4, 5));
+      //   console.log(add2(2, 3, 4, 5));
+    </script>
+  </body>
+</html>

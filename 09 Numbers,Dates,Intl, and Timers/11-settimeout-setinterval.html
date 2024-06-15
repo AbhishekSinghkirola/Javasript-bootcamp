@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers, Dates, Intl and Timers - SetTimeOut and SetInterval</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">SetTimeOut And SetInterval</h1>
+    <script>
+      "use strict";
+      /**
+       * SetTimeOut and SetInterval
+       *
+       * setTimeOut  Runs once after the time passed
+       *
+       * while SetInterval run again and again after a certain time until we dont stop
+       *
+       * The second argument is in milliseconds
+       *
+       */
+
+      //  SetTimeout -schedule the function
+      const ingredients = ["olives", "spinach"];
+
+      const pizzaTimer = setTimeout(
+        (ing1, ing2) =>
+          console.log(`Here is Your Pizza with ${ing1} and ${ing2} 🍕`),
+        3000,
+        ...ingredients
+      );
+      console.log("Waiting...");
+
+      if (ingredients.includes("spinach")) clearTimeout(pizzaTimer);
+
+      // SetInterval
+      // setInterval(function () {
+      //   const now = new Date();
+      //   console.log(
+      //     `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+      //   );
+      // }, 1000);
+    </script>
+  </body>
+</html>

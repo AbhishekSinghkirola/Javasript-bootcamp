@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How Javascript Works Behind The Scenes -Variable Environment Hosting and
+      TDZ
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Variable Environment - Hosting and TDZ (Temporal Dead Zone)
+    </h1>
+    <script>
+      /**
+       * Hoisting
+       * -- The Phenomena where we can access variables or functions before initialization
+       *
+       * In memory creation phase in Execution context
+       * first hoisiting were performed in which all variables and function were assigned with value undefined and function body respectively
+       * but in function expressions or arrow function the value stored is undefined becz it also treated as variable
+       * and function declared with let and const in temporal Dead Zone
+       *
+       * But in the case of let and const hoisting behave differently
+       * if we use let and const variables before initialization it will gives us reference error : cannot access variable before initialization
+       * due to Temporal Dead Zone
+       *
+       * Temporal Dead Zone (TDZ)
+       * -- The time between the hoisting of let and const to initialize them with some values is known as temporal dead zone
+       *
+       * Types of Errors :
+       *
+       * 1. Type error
+       * -- occur when we do some mistake on type like : if we decclare a var with const keyword and initialize it again with some value it gives type error
+       *
+       * 2. syntax error
+       * -- the error occur when we write something worng way like : we declare const variable without any value
+       *
+       * 3. Reference Error
+       * -- 3.1 use let and const before initialzation i.e Temporal Dead Zone period it will give reference error : connot user variable before intialization
+       * -- 3.2 use a variable which is not present in the program it will give reference erroe : x is not defined
+       */
+
+      //    a();
+      //    console.log(x);
+
+      //    function a () {
+      //     console.log('Hello World!');
+      //    }
+
+      //    var x = 23;
+    </script>
+  </body>
+</html>

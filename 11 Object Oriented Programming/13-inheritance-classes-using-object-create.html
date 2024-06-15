@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Object Oriented Programming - Inheritance Between Classes :
+      Object.Create()
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Inheritance Between Classes : Object.Create()
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * Inheritance Between Classes : Object.Create()
+       **/
+
+      const PersonProto = {
+        calcAge() {
+          console.log(2037 - this.birthYear);
+        },
+
+        init(firstName, birthYear) {
+          this.firstName = firstName;
+          this.birthYear = birthYear;
+        },
+      };
+
+      const steven = Object.create(PersonProto);
+
+      const StudentProto = Object.create(PersonProto);
+      StudentProto.init = function (firstName, birthYear, course) {
+        PersonProto.init.call(this, firstName, birthYear);
+        this.course = course;
+      };
+      StudentProto.introduce = function () {
+        console.log(`My name is ${this.firstName} and I study ${this.course}`);
+      };
+
+      const jay = Object.create(StudentProto);
+      jay.init("Jay", 2010, "Computer Science");
+      jay.introduce();
+      jay.calcAge();
+
+      console.log(jay);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Object Methods</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Object Methods</h1>
+    <script>
+      const abhishek = {
+        firstName: "Abhishek",
+        lastName: "Singh",
+        birthYear: 1999,
+        job: "Programmer",
+        friends: ["Ram", "sujit", "Kishan"],
+        hasDrivingLicense: true,
+        // We cannot do function declaration , but we can do function expression but syntax is change becz now it is an method
+        // a method is actuall function inside object as property
+
+        // calcAge: function (birthYear) {
+        //   return 2037 - birthYear;
+        // },
+
+        // using the birth year inside object
+        // calcAge: function () {
+        //   console.log(this)
+        //   return 2037 - this.birthYear;
+        // },
+
+        // The above two method are not good according to dry principle
+        calcAge: function () {
+          this.age = 2037 - this.birthYear;
+          return this.age;
+        },
+        getSummary: function () {
+          return `${this.firstName} is a ${this.calcAge()} years old ${this.job}, and he has ${this.hasDrivingLicense ? 'a' : 'no'} driving license`;
+        },
+      };
+
+      // We can simply called our methods
+      // We can simply called our methods
+      // console.log(abhishek.calcAge(1991));
+      // console.log(abhishek["calcAge"](1991));
+      // console.log(abhishek['calcAge'](abhishek.birthYear))
+
+      // thiskeyword example
+      // this keyword is equal to the object in which the mwthod is called or it is equal to the object calling the method
+      console.log(abhishek.calcAge());
+      // it is not good to calling function again and agian so we create a function and stores its value to a variable
+      // console.log(abhishek.calcAge());
+      // console.log(abhishek.calcAge())
+      
+      ;
+      // console.log(abhishek.calcAge());
+      console.log(abhishek.age);
+      console.log(abhishek.age);
+      console.log(abhishek.age);
+
+      // Challenge
+      // Abhsiehk is a 38 years old programmer, and he ha a/no driving license
+      // console.log(
+      //   `${abhishek.firstName} is a ${abhishek.age} years old ${
+      //     abhishek.job
+      //   }, and he has ${abhishek.hasDrivingLicense ? "a" : "no"} driving license`
+      // );
+      console.log(abhishek.getSummary());
+    </script>
+  </body>
+</html>

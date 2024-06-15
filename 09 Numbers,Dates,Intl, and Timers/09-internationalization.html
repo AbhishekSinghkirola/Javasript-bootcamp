@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers, Dates, Intl and Timers - Internationalization</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Internationalization (INTL)</h1>
+    <script>
+      "use strict";
+      /**
+       * Internationalization
+       *
+       * It is an APi which support language specific things
+       */
+
+      const now = new Date();
+
+      const options = {
+        hour: "numeric",
+        minute: "numeric",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        weekday: "long",
+      };
+
+      const locale = navigator.language
+      console.log(new Intl.DateTimeFormat(locale, options).format(now));
+    </script>
+  </body>
+</html>

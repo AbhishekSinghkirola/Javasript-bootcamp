@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Activating Strict Mode</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Activating Strict Mode</h1>
+    <script>
+      /*
+            Before Going Further in other topic in js we will learn to activate strict mode feature in js.
+            So Let's get Started 😃
+        */
+
+      /*
+            Strict Mode
+            It is a special Mode in Js which helps us to write Secure Js Code i.e. to avoid accidental errors that introduce bugs to our code
+        */
+
+      /**
+       * How to Activate Strict Mode in JS
+       * you can simply write like this and it is the very first line of your script and it will work for your whole script
+       * (we can use strict mode for a specific function or a aspecific block)
+       **/
+
+      "use strict";
+
+      let hasDriversLicense = false;
+      const hasPassTest = true;
+
+      if (hasPassTest) hasDriversLicense = true;
+      if (hasDriversLicense) console.log("You can Drive :D");
+
+      // Here in this example we has mispelled the variable name on first if condition so if we do not use the strict mode it didn't gives us error while strict mode gives an error
+
+      /**
+       * Strict Mode introduce a short list of variable names that are reserved for features that might be added to the laanguage a bit later
+       * **/
+
+      //  const interface = 'Audio';
+      // const private = 5467;
+
+      // We cannot use these variable name because they were reserved it is similar like that we cannot use if as a variable name because it is reserved keyword in js
+    </script>
+  </body>
+</html>

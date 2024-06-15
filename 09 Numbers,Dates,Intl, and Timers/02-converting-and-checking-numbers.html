@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Numbers, Dates, Intl and Timers - Converting and Checking Numbers
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Converting and Checking Numbers</h1>
+    <script>
+      "use strict";
+      /*
+        Converting and Checking Numbers
+      */
+
+      /**
+       * Numbers - In Js all numbers were internally represented as floating point number
+       *  no matter if we actually write without decimals
+       *
+       * And it is also represented internally as a 64 base 2 format
+       * Numbers are always stored in binary format i.e numbers are always in 0's and 1's
+       *
+       * Base 10 => 0 - 9
+       * Binary base 2 => 0 - 1
+       */
+      console.log(23 === 23.0);
+
+      // In binary fractions are hard to represent; js do rounding (so we can not do scientific calculations precisely or financial calculations also)
+      console.log(0.1 + 0.2);
+      console.log(0.1 + 0.2 === 0.3); //results false
+
+      // Type Coresion
+      console.log(Number("23"));
+      console.log(+"23");
+
+      // Parsing [String Starts with Number] , second arg called radix
+      console.log(Number.parseInt("30px"));
+      console.log(Number.parseInt("e23")); //NAN
+
+      // Second Argument Radix
+      // Base 10
+      console.log(Number.parseInt("30px", 10));
+      // Binary
+      console.log(Number.parseInt("30px", 2)); //we cannot see it
+
+      console.log(Number.parseFloat("2.5rem")); //Here Number is namespace
+      console.log(parseFloat("2.5rem")); //Global Functions
+
+      console.log(Number.isNaN(20));
+      console.log(Number.isNaN(+"20X"));
+      console.log(Number.isNaN(23 / 0));
+
+      console.log(Number.isFinite(20.3));
+      console.log(Number.isFinite(20));
+      console.log(Number.isFinite(+"20X"));
+      console.log(Number.isFinite("20"));
+      console.log(Number.isFinite("20X"));
+      console.log(Number.isFinite(20 / 0));
+
+      console.log(Number.isInteger(20));
+      console.log(Number.isInteger(20.0));
+      console.log(Number.isInteger(20.3));
+      console.log(Number.isInteger("20"));
+      console.log(Number.isInteger("20px"));
+      console.log(Number.isInteger(20 / 0));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Iteration -The For Loop</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Iteration -The For Loop</h1>
+    <script>
+      /**
+       *  Loop is also a control structure
+       * It is present in all the programming languages
+       * It allows us to do the repitative task ie. we can do a task over and over again
+       *
+       **/
+
+      //  Example taking an analogy of gym you lift weight and doing 10 repitition
+      // console.log("Lifting Weights repitition 1 🏋️");
+      // console.log("Lifting Weights repitition 2 🏋️");
+      // console.log("Lifting Weights repitition 3 🏋️");
+      // console.log("Lifting Weights repitition 4 🏋️");
+      // console.log("Lifting Weights repitition 5 🏋️");
+      // console.log("Lifting Weights repitition 6 🏋️");
+      // console.log("Lifting Weights repitition 7 🏋️");
+      // console.log("Lifting Weights repitition 8 🏋️");
+      // console.log("Lifting Weights repitition 9 🏋️");
+      // console.log("Lifting Weights repitition 10 🏋️");
+      // But this is the best way to it violates the dry principle completely , the only changed value is that number
+
+
+      // For loop keeps running while the condition is true
+      for(let rep = 1; rep <= 10; rep++) {
+        console.log(`Lifting Weights repitition ${rep} 🏋️`);
+      }
+    </script>
+  </body>
+</html>

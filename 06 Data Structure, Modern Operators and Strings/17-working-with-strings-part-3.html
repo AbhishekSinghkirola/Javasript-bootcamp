@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Working With Strings 3
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Working With Strings Part 3</h1>
+    <script>
+      "use strict";
+      /**
+       * Working With Strings 3
+       *
+       */
+
+      //  Split
+      console.log("a+very+nice+string".split("+")); //pass the diceider string and it will return an array
+      console.log("abhishek Singh".split(" "));
+
+      const [firstName, lastName] = "abhishek Singh".split(" ");
+
+      // Join
+      const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+      console.log(newName);
+
+      const capitalizeName = function (name) {
+        const names = name.split(" ");
+        const namesUpper = [];
+
+        for (const n of names) {
+          // namesUpper.push(n[0].toUpperCase() + n. slice(1));
+          namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+        }
+        console.log(namesUpper.join(" "));
+      };
+
+      capitalizeName("jessica ann smith devis");
+      capitalizeName("abhishek singh");
+
+      // Padding a string
+      const message = "Go to Gate 23";
+      console.log(message.padStart(25, "+").padEnd(35, "+"));
+      console.log("Jonas".padStart(25, "+").padEnd(20, "+"));
+
+      const maskCreditCard = function (number) {
+        const str = number + "";
+        const last = str.slice(-4);
+        return last.padStart(str.length, "*");
+      };
+
+      console.log(maskCreditCard(45654867456456));
+      console.log(maskCreditCard("3454602352352358"));
+      console.log(maskCreditCard("6666666"));
+
+      // Repeat
+      const message2 = "Bad Weather...All Departures Delayed... ";
+      console.log(message2.repeat(5));
+
+      const planesInLine = function (n) {
+        console.log(`There are ${n} Planes in line ${"✈️".repeat(n)}`);
+      };
+
+      planesInLine(5)
+      planesInLine(3)
+      planesInLine(12)
+    </script>
+  </body>
+</html>

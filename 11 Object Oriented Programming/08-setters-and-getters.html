@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Oriented Programming - Setters And Getters</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Setters and Getters</h1>
+    <script>
+      "use strict";
+      /**
+       * Setters And Getters
+       *
+       * Accessor Properties -> getter and setter methods , Data Properties -> normal methods
+       */
+
+      const account = {
+        owner: "Jonas",
+        movements: [200, 530, 120, 200],
+
+        get latest() {
+          return this.movements.slice(-1).pop();
+        },
+
+        set latest(mov) {
+          this.movements.push(mov);
+        },
+      };
+
+      console.log(account.latest);
+
+      account.latest = 50;
+      console.log(account.movements);
+
+      class PersonCl {
+        constructor(fullName, birthYear) {
+          this.fullName = fullName;
+          this.birthYear = birthYear;
+        }
+
+        // Methods will be added to the prototype property of the class
+        calcAge() {
+          console.log(2037 - this.birthYear);
+        }
+
+        greet() {
+          console.log(`Hey ${this.firstName}`);
+        }
+
+        get age() {
+          return 2037 - this.birthYear;
+        }
+
+        // Set a property that already Exsist
+        set fullName(name) {
+          if (name.includes(" ")) this._fullName = name;
+          else alert(`${name} is not a full name!`);
+        }
+
+        get fullName() {
+          return this._fullName;
+        }
+      }
+
+      const jessica = new PersonCl("Jessica Devis", 1991);
+
+      console.log(jessica.age);
+    </script>
+  </body>
+</html>

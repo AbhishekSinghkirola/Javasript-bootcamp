@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Oriented Programming - Object Create</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Object.Create</h1>
+    <script>
+      "use strict";
+      /**
+       * Object.Create
+       **/
+
+      const PersonProto = {
+        calcAge() {
+          console.log(2037 - this.birthYear);
+        },
+
+        // Set Properties
+        init(firstName, birthYear) {
+          this.firstName = firstName;
+          this.birthYear = birthYear;
+        },
+      };
+
+      const steven = Object.create(PersonProto);
+      // Bad Way
+      steven.name = "Steven";
+      steven.birthYear = 2022;
+      steven.calcAge();
+
+      console.log(steven);
+
+      console.log(steven.__proto__ === PersonProto);
+
+      const sara = Object.create(PersonProto);
+      // Good Way
+      sara.init("Sara", 1997);
+      sara.calcAge();
+
+      console.log(sara);
+    </script>
+  </body>
+</html>

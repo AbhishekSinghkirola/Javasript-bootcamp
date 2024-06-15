@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Looping Backwards and Loop in Loop</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Looping Backwards and Loop in Loop</h1>
+    <script>
+      // Looping Arrays Backwards ie. laste index to first
+      const abhishekArray = [
+        "Abhishek",
+        "Singh",
+        2023 - 1999,
+        "Programmer",
+        ["Sanjay", "Ravi", "Kishan"],
+      ];
+
+      for (let i = abhishekArray.length - 1; i >= 0; i--) {
+        console.log(i, abhishekArray[i])
+      }
+
+      // Loop inside Loop
+      for(let exercise = 1; exercise < 4; exercise++) {
+        console.log(`------Starting Exercice ${exercise}`)
+        for(let rep = 1; rep < 6; rep++) {
+          console.log(`Exercise ${exercise} : Lifting Weights Repitition ${rep} 🏋️`)
+        }
+      }
+    </script>
+  </body>
+</html>

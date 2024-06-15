@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Maps Fundamentals
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Maps Fundamentals</h1>
+    <script>
+      "use strict";
+      /**
+       * Maps Fundamentals
+       * It is a Data Structure which is used to map values with keys
+       *
+       * Difference between Maps and Objects?
+       * -- In maps key have any data types,
+       */
+
+      const rest = new Map();
+
+      //   Fill up the map -- set method return the updated map
+      rest.set("name", "Classico Italiono");
+      rest.set(1, "France, Italy");
+      console.log(rest.set(2, "India, Europe")); //set method returns the updated map
+      console.log(rest); // same output as above
+
+      //   Chaining also possible in set method
+      rest
+        .set("categories", ["Italiaz", "Pizzaria", "Vegetarian", "Organic"])
+        .set("open", 11)
+        .set("close", 23)
+        .set(true, "We are Open :D")
+        .set(false, "We are closed :(");
+
+      // Get Data From Maps
+      console.log(rest.get("name"));
+      console.log(rest.get(true));
+      console.log(rest.get(1));
+
+      //   const time = 21;
+      const time = 8;
+      console.log(
+        rest.get(time > rest.get("open") && time < rest.get("close"))
+      );
+
+      //   Check map contains a certain key
+      console.log(rest.has("categories"));
+
+      // Delete Element from Maps
+      rest.delete(2);
+      console.log("updatedr",rest);
+
+      //   Size of Map
+      console.log(rest.size);
+
+      // Delete all Elemetn
+      //   rest.clear();
+      //   console.log(rest);
+
+      rest.set([1, 2], "Test");
+      console.log(rest.get([1,2])); // object types the are different in heap so make a array outside and put inside
+
+      const arr = [3,4]
+      rest.set(arr,"test2")
+     console.log(rest.get(arr));
+
+     rest.set(document.querySelector('h1'), "Heading")
+    </script>
+    
+  </body>
+</html>

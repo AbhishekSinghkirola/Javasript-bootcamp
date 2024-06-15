@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How Javascript Works Behind The Scenes - Scope and Scope Chain
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Scope and Scope Chain</h1>
+    <script>
+      "use strict";
+      /**
+       * Scope
+       * -- Scope is Where we can access a particular variables and function
+       *
+       * It has two aspects
+       * Where does this variables live? or where we can access a certain variable
+       *
+       * Lexical Environment
+       * -- Lexical environment is the local Memory along with the lexical environment of the parent
+       * i.e we can use the local memory of the outer parent of that scope
+       *
+       * What is Lexical?
+       * -- Lexical means hierarchial or sequence or order
+       *
+       * Scope Chain
+       * The process of finding variables in the lexical Environment of its parent is scope chaining
+       */
+
+      // function a() {
+      //   var y = 100;
+      //   function b() {
+      //     console.log(x, y);
+      //   }
+      //   b();
+      // }
+
+      // var x = 10;
+      // a();
+
+      /**
+       * Global Scope
+       * -- Variables and functions in Global scope are used everywhere
+       *
+       * Local Scope or function Scope
+       * -- Variables and functions inside block cannot be accessed outside it
+       *
+       * Bock Scope
+       * -- variable and function inside an block
+       *
+       * What is Block ?
+       * -- It is also known as Compund Statement. It is used to combining multiple statement
+       *
+       * Shadowing
+       * -- The variable created globally then we again created inside an block this is known as shadowing of variable
+       *
+       * Illegal Shadwing
+       * if you create a variable globally with let keyword and you should shadow this variable inside a block with var keyword this will not allowed and known as illegal shadowing because var is function scoped so it do not cross its boundaries if we placed it inside a function it is perfectly valid
+       *
+       */
+      // let a = 90;
+      // var b = 100;
+      // {
+      //   let a = 10;
+      //   var b = 20;
+      //   const c = 30;
+      //   console.log(a, b, c);
+      // }
+      // console.log(a);
+      // console.log(b);
+      // console.log(c);
+
+      // let a = 100;
+      // {
+      //   let a = 10;
+      // }
+      // console.log(a);
+
+      // <!-- ------------------------------ Practise ------------------------------- -->
+      // function calcAge(birthYear) {
+      //   const age = 2023 - birthYear;
+      //   console.log(firstName);
+      //   return age;
+      // }
+      // const firstName = "Abhishek"
+      // calcAge(1991)
+
+      // function calcAge(birthYear) {
+      //   const age = 2023 - birthYear;
+      //   function printAge() {
+      //     const output = `${firstName}, You are ${age}, born in ${birthYear}`;
+      //     console.log(output);
+
+      //     if (birthYear >= 1991 && birthYear <= 1996) {
+      //       var millenial = true;
+      //       const firstName = "Rahul";
+      //       const str = `Oh, and you're a millenial, ${firstName}`;
+      //       console.log(str);
+
+      //       function add(a, b) {
+      //         return a + b;
+      //       }
+      //     }
+
+      //     console.log(millenial);
+      //     console.log(add(2,3)); //Only without strict mode; in strict mode it is blocked scope
+      //   }
+      //   printAge();
+      //   return age;
+      // }
+      // const firstName = "Abhishek";
+      // calcAge(1991);
+    </script>
+  </body>
+</html>

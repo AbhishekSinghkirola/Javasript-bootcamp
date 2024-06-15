@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Functions Calling Other Functions</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Functions Calling Other Functions</h1>
+    <script>
+      function cutFruitPeices(fruit) {
+        return fruit * 4;
+      }
+      function fruitProcessor(apples, oranges) {
+        const applePeices = cutFruitPeices(apples)
+        const orangePeices = cutFruitPeices(oranges)
+        console.log(apples, oranges);
+        const juice = `Juice with ${applePeices} peices of apples and ${orangePeices} peices of oranges`;
+        return juice;
+      }
+
+      console.log(fruitProcessor(4,5));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Looping Objects
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Looping Objects: Object Keys, Values and Entries
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * Looping Objects
+       *
+       * We can also Loop over objects which is not iterable by in an indirect way
+       */
+      const weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+      const openingHours = {
+        [weekDays[3]]: {
+          open: 12,
+          close: 22,
+        },
+        [weekDays[4]]: {
+          open: 11,
+          close: 23,
+        },
+        [weekDays[5]]: {
+          open: 0, //open 24 hours
+          close: 24,
+        },
+      };
+
+      const restaurant = {
+        name: "Classico Italian",
+        location: "New Delhi, Shimla, Mumbai",
+        categories: ["Indian", "South Indian", "Chinese", "Italian"],
+        starterMenu: ["Chilli Potato", "Garlic Bread", "kabab", "Paneer Tikka"],
+        mainMenu: ["Pizza", "Pasta", "Chowmein"],
+
+        // openingHours : openingHours,
+        openingHours, //ES6 Enhanced Object Literals
+
+        order(starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+
+        orderdelivery({
+          starterIndex = 1,
+          mainIndex = 0,
+          address,
+          time = "20:00",
+        }) {
+          console.log(
+            `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+          );
+        },
+
+        orderPasta(ing1, ing2, ing3) {
+          console.log(
+            `Here is your delicious Pasta with ${ing1}, ${ing2}, ${ing3}`
+          );
+        },
+
+        orderPizza(mainIngredient, ...otherIngredients) {
+          console.log(mainIngredient);
+          console.log(otherIngredients);
+        },
+      };
+
+      //    Looping Over Property names or keys
+      const properties = Object.keys(openingHours);
+      console.log(properties);
+      //   console.log(`We are open on ${properties.length} days`);
+
+      let openStr = `We are open on ${properties.length} days `;
+
+      //   for (const day of Object.keys(openingHours)) {
+      //     console.log(day);
+      //   }
+      for (const day of Object.keys(openingHours)) {
+        openStr += `${day}, `;
+      }
+      console.log(openStr);
+
+      //   Looping Over Values
+      const values = Object.values(openingHours);
+      console.log(values);
+
+      // Looping Whole Object
+      const entries = Object.entries(openingHours);
+      console.log(entries);
+
+      for (const [key, { open, close }] of entries) {
+        // console.log(x);
+        console.log(`On ${key} we open at ${open} and closed at ${close}`);
+      }
+    </script>
+  </body>
+</html>

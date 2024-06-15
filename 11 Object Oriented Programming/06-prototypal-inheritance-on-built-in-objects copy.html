@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Object Oriented Programming - Prototypal Inheritance On built In Objects
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Prototypal Inheritance On built In Objects
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * Prototypal  Inheritance On Built In Objects
+       *
+       */
+
+      const Person = function (firstName, birthYear) {
+        // Instance Properties
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+      };
+
+      const jonas = new Person("Jonas", 1991);
+      const abhishek = new Person("Abhishek", 2017);
+      const jack = new Person("Jack", 2019);
+
+      Person.prototype.calcAge = function () {
+        console.log(2037 - this.birthYear);
+      };
+
+      Person.prototype.species = "Homo Sapiens";
+
+      console.log(jonas.__proto__);
+      // Object.prototypr (top of prototype chain)
+      console.log(jonas.__proto__.__proto__);
+
+      // This Work Because of Prototype Chain (Object.Prototype have this hasOwnProperty Method)
+      console.log(jonas.hasOwnProperty("firstName"));
+
+      console.log(jonas.__proto__.__proto__.__proto__);
+
+      // This constructor property of prototype return the constructor function itself
+      console.log(Person.prototype.constructor);
+
+      // Prototype of Arrays
+      const arr = [1, 23, 4, 6, 74, 23, 22];
+      console.log(arr.__proto__);
+      console.log(arr.__proto__ === Array.prototype);
+      console.log(arr.__proto__.__proto__);
+
+      // It is not a good idea
+      Array.prototype.unique = function () {
+        return [...new Set(this)];
+      };
+
+      console.log(arr.unique());
+
+      // Prototype of Dom Element
+      const h1 = document.querySelector("h1");
+      console.dir(h1);
+
+      console.dir((x) => x + 1);
+    </script>
+  </body>
+</html>

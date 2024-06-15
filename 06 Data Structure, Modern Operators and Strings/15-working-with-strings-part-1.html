@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Working With Strings
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Working With Strings</h1>
+    <script>
+      "use strict";
+      /**
+       * Working With Strings
+       * strings are immutable
+       * so all methods return new strings(Put our string to box which is object)
+       */
+
+      const airline = "TAP Air Portugal";
+      const plane = "A320";
+
+      console.log(plane[0]);
+      console.log(plane[1]);
+      console.log(plane[2]);
+      console.log(plane[3]);
+      console.log("B737"[0]);
+
+      console.log(airline.length);
+      console.log("B737".length);
+
+      //   <!-- --------------------------- Strings Methods --------------------------- -->
+
+      // Indexof and lastIndexOf -- case sensitive, search entire word
+      console.log(airline.indexOf("r")); // first occurence
+      console.log(airline.lastIndexOf("r")); // last occurence
+      console.log(airline.lastIndexOf("Portugal")); // Whole Word but case sensitive
+
+      // Slice Method to cut some part of strings
+      console.log(airline.slice(4)); //cut start from index 4
+      console.log(airline.slice(4, 7)); //cut start from index 4 and end with 7 (End is not included)
+      console.log(airline.slice(0, airline.indexOf(" ")));
+      console.log(airline.slice(airline.lastIndexOf(" ") + 1));
+      console.log(airline.slice(-2)); // start from end
+      console.log(airline.slice(1, -1));
+
+      const checkMiddleSeat = function (seat) {
+        // B and E are Middle Seats
+        const s = seat.slice(-1);
+        if (s === "B" || s === "E") console.log("You Got Middle Seat 😬");
+        else console.log("You were Lucky! 😎");
+      };
+      checkMiddleSeat("11B");
+      checkMiddleSeat("23C");
+      checkMiddleSeat("3E");
+
+      console.log(new String("Abhishek")); // converted to object strings
+      console.log(typeof new String("Abhishek"));
+      console.log(typeof new String("Abhishek").slice(1)); // after operation converted back to primitive strings
+    </script>
+  </body>
+</html>

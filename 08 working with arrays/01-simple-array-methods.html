@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working With Arrays - Simple Array Methods</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Simple Array Methods</h1>
+    <script>
+      "use strict";
+      /*
+        Simple Methods
+
+        Arrays are objects so that's why they have special built-in methods for them
+      */
+
+      let arr = ["a", "b", "c", "d", "e"];
+
+      // !. Slice Method -> Extract part of any array without changing original array
+      console.log("------------SLICE---------------");
+      console.log("return the Whole array after index 2 ", arr.slice(2));
+      console.log(
+        "return the Whole array after index 2 and between 4 (not included) ",
+        arr.slice(2, 4)
+      );
+      console.log("Slice in Negation ", arr.slice(-2));
+      console.log("Slice in Negation Get Last Element ", arr.slice(-1));
+      console.log("Slice in Negation for ending ", arr.slice(1, -2));
+      console.log("Shallow copy of an array ", arr.slice());
+
+      // 2. Splice Methods -> Extract part array from an array and return it and mutates the original array
+      console.log("--------------SPLICE-------------------");
+      // console.log(
+      //   "Extract Part from an array and return new array",
+      //   arr.splice(2)
+      // );
+      console.log("Removes the last element from an array", arr.splice(-1));
+      console.log(
+        "Remove Element from index 1 and remove two elements ",
+        arr.splice(1, 2)
+      );
+      console.log("Original Array Changed ", arr);
+
+      // 3. Reverse Method -> Reverse the array and returns it and then mutate the original array
+      console.log("--------------REVERSE------------------");
+      const arr2 = ["j", "i", "h", "g", "f"];
+
+      console.log("Reverse the Array ", arr2.reverse());
+      console.log("Changed the original Arrray ", arr2);
+
+      // 4. Concat -> used to combining arrays
+      console.log("----------CONCAT-----------------");
+      arr = ["a", "b", "c", "d", "e"];
+      const letters = arr.concat(arr2);
+      console.log("Combining Two Arrays ", letters);
+      console.log("Combining using spread array ", [...arr, ...arr2]);
+
+      // 5. Join Method -> join array to string with some separator
+      console.log('-----------------JOIN-----------------');
+      console.log('Joining/Combining all the letters with a separator : ',letters.join('-'));
+    </script>
+  </body>
+</html>

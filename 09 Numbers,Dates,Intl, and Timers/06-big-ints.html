@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers, Dates, Intl and Timers - Big Ints</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Big Ints</h1>
+    <script>
+      "use strict";
+      /**
+       * Big Ints
+       *
+       * Math Operator not work
+       */
+
+      //  The biggest number we stored in 64 bits in which 53 were used and the rest were for signs, decimals etc
+      console.log(2 ** 53 - 1);
+      console.log(Number.MAX_SAFE_INTEGER);
+
+      console.log(2 ** 56 - 1); //Incorrect
+
+      // Big Int
+      console.log(543534534534545645645654654656888888888888888888n);
+      console.log(BigInt(48384302));
+
+      // operations
+      console.log(1000n + 1000n);
+
+      const huge = 23334545667755787766n;
+      const num = 23;
+      console.log(huge + BigInt(num));
+
+      // Exception
+      console.log(20n > 20);
+      console.log(20n === 20);
+      console.log(typeof 20n);
+
+      console.log(huge + " is Really big!!");
+
+      // Divisions
+      console.log(10n / 3n);
+      console.log(11n / 3n);
+      console.log(10 / 3);
+    </script>
+  </body>
+</html>

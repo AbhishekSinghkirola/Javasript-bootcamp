@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Let, Var and Const</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Let, Var and Const</h1>
+    <script>
+      console.log(
+        `Let Us Look at three differnt ways of declaring variables in javascript:\n1.Let\n2.Var\n3.Const`
+      );
+      console.log("");
+      console.log("Let ad Const were introduced in ES6");
+      console.log("");
+      console.log(
+        "If we use we can mutate the values i.e we can change the value"
+      );
+
+      let age = 22;
+      console.log("age is ", age);
+      age = 23;
+      console.log("Now age is ", age);
+
+      console.log("");
+      console.log("Constant Values are immutable :");
+
+      const birthYear = 2001;
+      // birthYear = 2002; //Its is wrong gives declaration error
+      //const currentJob; // Its also wrong gives intializer error
+
+      console.log("");
+      console.log("Var is Just Like Let ie. values are mutable");
+      var salary = 20000;
+      salary = 25000;
+
+      console.log("");
+      console.log(
+        "Dont Use Var becz the chances of bug were Increased, Mostly Use Const and then Let to reduce the bug"
+      );
+    </script>
+  </body>
+</html>

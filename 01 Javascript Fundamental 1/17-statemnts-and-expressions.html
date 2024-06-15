@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Statements and Expressions</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Statements and Expressions</h1>
+    <script>
+      console.log("Expressions and Statements");
+      console.log("");
+      console.log(
+        `Expression : It is a peice of Code Which Produces a Value. eg:`
+      );
+      3 + 4; //It is an expression
+      1991; //It is an expression
+      true && false && !false; // It is an expression
+
+      console.log("");
+      console.log(
+        `Statement is Like a Bigger peice of code which executed and which does not produce a value on itself`
+      );
+
+      //   It is a statement
+      if (23 > 18) {
+        const string = "23 is Bigger than 18";
+      }
+
+      //   Note :- In js string literals we can only insert expression not statements
+      console.log(`I'm ${2023 - 2001} Years old`);
+      //we connot use like that console.log(`I'm ${2023 - 2001} Years old ${ if (23 > 18) {const string = "23 is Bigger than 18";}}`);
+      //   here the variable also an expression
+      const me = "Abhishek";
+      console.log(`${me} is ${2023 - 2001} Years old`);
+    </script>
+  </body>
+</html>

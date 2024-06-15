@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Logical Operators</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Logical Operators</h1>
+    <script>
+      const hasDrivingLicense = true; //A
+      const hasGoodVision = true; //B
+      console.log(hasDrivingLicense && hasGoodVision);
+      console.log(hasDrivingLicense || hasGoodVision);
+      console.log(!hasDrivingLicense);
+      //   const shouldDrive = hasDrivingLicense && hasGoodVision;
+      //   if (shouldDrive) {
+      //     console.log("John is able to drive!");
+      //   } else {
+      //     console.log("someone else should drive!");
+      //   }
+      if (hasDrivingLicense && hasGoodVision) {
+        console.log("John is able to drive!");
+      } else {
+        console.log("someone else should drive...");
+      }
+
+      const isTired = false;
+      console.log((hasDrivingLicense && hasGoodVision) || isTired);
+      if (hasDrivingLicense && hasGoodVision&& !isTired) {
+        console.log("John is able to drive!");
+      } else {
+        console.log("someone else should drive...");
+      }
+    </script>
+  </body>
+</html>

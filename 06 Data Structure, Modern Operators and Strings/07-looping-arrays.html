@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Looping Arrays
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Looping Arrays - The For of Loop</h1>
+    <script>
+      "use strict";
+      /**
+       * The For of Loop -- ES6
+       *
+       * For of loop is basically for getting the current element of an array but we can also get the index you can see that in example below
+       */
+      const restaurant = {
+        name: "Classico Italian",
+        location: "New Delhi, Shimla, Mumbai",
+        categories: ["Indian", "South Indian", "Chinese", "Italian"],
+        starterMenu: ["Chilli Potato", "Garlic Bread", "kabab", "Paneer Tikka"],
+        mainMenu: ["Pizza", "Pasta", "Chowmein"],
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 22,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0, //open 24 hours
+            close: 24,
+          },
+        },
+
+        order: function (starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+
+        orderdelivery: function ({
+          starterIndex = 1,
+          mainIndex = 0,
+          address,
+          time = "20:00",
+        }) {
+          console.log(
+            `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+          );
+        },
+
+        orderPasta: function (ing1, ing2, ing3) {
+          console.log(
+            `Here is your delicious Pasta with ${ing1}, ${ing2}, ${ing3}`
+          );
+        },
+
+        orderPizza: function (mainIngredient, ...otherIngredients) {
+          console.log(mainIngredient);
+          console.log(otherIngredients);
+        },
+      };
+
+      const menu = [...restaurant.starterMenu, ...restaurant.starterMenu];
+
+      for (const item of menu) console.log(item);
+
+      for (const item of menu.entries()) {
+        console.log(`${item[0] + 1} : ${item[1]}`);
+      }
+      for (const [i, el] of menu.entries()) {
+        console.log(`${i + 1} : ${el}`);
+      }
+
+      console.log([...menu.entries()]);
+    </script>
+  </body>
+</html>

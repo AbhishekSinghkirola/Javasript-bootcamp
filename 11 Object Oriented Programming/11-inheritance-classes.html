@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Object Oriented Programming - Inheritance Between Classes : Constructor
+      Functions
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Inheritance Between Classes : Constructor Functions
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * Inheritance Between Classes : Constructor Functions
+       **/
+
+      const Person = function (firstName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+      };
+
+      Person.prototype.calcAge = function () {
+        console.log(2037 - this.birthYear);
+      };
+
+      const Student = function (firstName, birthYear, course) {
+        Person.call(this, firstName, birthYear);
+        this.course = course;
+      };
+
+      // Linking Prototypes
+      Student.prototype = Object.create(Person.prototype);
+
+      Student.prototype.introduce = function () {
+        console.log(`My name is ${this.firstName} and I study ${this.course}`);
+      };
+
+      const mike = new Student("Mike", 2020, "Computer Science");
+      mike.introduce();
+      mike.calcAge();
+
+      console.log(mike.__proto__);
+      console.log(mike.__proto__.__proto__);
+
+      console.log(mike instanceof Student);
+      console.log(mike instanceof Person);
+      console.log(mike instanceof Object);
+      Student.prototype.constructor = Student;
+      console.log(Student.prototype.constructor);
+    </script>
+  </body>
+</html>

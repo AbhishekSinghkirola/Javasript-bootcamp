@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Conditional Operator</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Conditional (Ternary) Operator</h1>
+    <script>
+      // The conditional operators is also used for conditions. It is similar to if-else but we cal do all in one line (becz it has three parts)
+      // it is an operator and operator always produce some value so it is an expression
+      const age = 15;
+      age >= 18
+        ? console.log("I Like to drink wine 🍷")
+        : console.log("I like to drink water 💧");
+      // Most Common used way
+      const drink = age >= 18 ? "wine 🍷" : "water 💧";
+      console.log(drink);
+      console.log(`I like ${age >= 18 ? "wine 🍷" : "water 💧"}`);
+    //   Same situation with if-else statement
+      let drink2;
+      if (age >= 18) {
+        drink2 = "wine 🍷";
+      } else {
+        drink2 = "water 💧";
+      }
+      console.log(drink2);
+    </script>
+  </body>
+</html>

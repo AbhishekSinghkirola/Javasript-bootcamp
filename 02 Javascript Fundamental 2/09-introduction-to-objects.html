@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Introduction to Objects</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Introduction to Objects</h1>
+    <script>
+      /**
+       *  Objects
+       * Object is also a datastructure like array
+       * We see in array that we have to record data of a person ie. multiple values we can store in array similary we can also stores in object but the difference is that
+       * if we need to access each element in array we use its index no. or order no. but in the case of object we have key value pair i.e. we can assign a key to each value and we
+       * can access that value by simply calling key
+       * eg :
+       * **/
+      const abhishekArray = [
+        "Abhishek",
+        "Singh",
+        2023 - 1999,
+        "Programmer",
+        ["Sanjay", "Ravi", "Kishan"],
+      ];
+
+      // there are many ways to create object becz it is th basic fundamental concept of js
+      // Object Literal syntax the easiest one to create an object
+      const abhishek = {
+        //key or property : value
+        firstName: "Abhishek",
+        lastName: "Singh",
+        age: 2034 - 1999,
+        job: "Programmer",
+        friends: ["Ram", "sujit", "Kishan"],
+      };
+      // this object have 5 properties
+
+      console.log(abhishek);
+    </script>
+  </body>
+</html>

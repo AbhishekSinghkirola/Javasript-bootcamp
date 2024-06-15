@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Switch Statement</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Switch Statement</h1>
+    <script>
+      // Assign one Activity each day
+      const day = "sunday";
+      switch (day) {
+        case "monday": // day === 'monday'
+          console.log("Plan Course Structure");
+          console.log("Go to coding Meetup");
+          break;
+        case "tuesday":
+          console.log("Prepare Theory Video");
+          break;
+        case "wednesday":
+        case "thursday":
+          console.log("Write Code Examples");
+          break;
+        case "friday":
+          console.log("Record Videos");
+          break;
+        case "saturday":
+        case "sunday":
+          console.log("Enjoy the Weekend");
+          break;
+        default:
+          console.log("Not a Valid Day!");
+      }
+
+      if (day === "monday") {
+        console.log("Plan Course Structure");
+        console.log("Go to coding Meetup");
+      } else if (day === "tuesday") {
+        console.log("Prepare Theory Video");
+      } else if (day === "wednesday" || day === "thursday") {
+        console.log("Write Code Examples");
+      } else if (day === "friday") {
+        console.log("Record Videos");
+      } else if (day === "saturday" || day === "sunday") {
+        console.log("Enjoy the Weekend");
+      } else {
+        console.log("Not a Valid Day!");
+      }
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working With Arrays - ForEach Method</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">ForEach Method For Maps and Sets</h1>
+    <script>
+      "use strict";
+      /*
+        ForEach Method For Maps and Sets
+      */
+
+      // Maps
+      console.log("----------- FOREACH FOR MAPS --------------");
+      const currencies = new Map([
+        ["USD", "United States dollar"],
+        ["EUR", "Euro"],
+        ["GBP", "Pound sterling"],
+      ]);
+
+      currencies.forEach(function (value, key, map) {
+        console.log(`${key} : ${value} -- ${map}`);
+      });
+
+      // Sets (sets have no key)
+      console.log("----------- FOREACH FOR SETS --------------");
+      const currenciesUnique = new Set(["USD", "GSP", "USD", "EUR", "EUR"]);
+      console.log("Original Set of Currencies : ", currenciesUnique);
+      // currenciesUnique.forEach(function (value, key, set) {
+      currenciesUnique.forEach(function (value, _, set) { // set have no key and _ is throwaway variable
+        console.log(`${value} : ${value} -- ${set}`);
+      });
+    </script>
+  </body>
+</html>

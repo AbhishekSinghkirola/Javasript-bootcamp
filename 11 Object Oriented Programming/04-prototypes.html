@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Oriented Programming - Prototypes</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Prototypes</h1>
+    <script>
+      "use strict";
+      /**
+       * Prototypes
+       *
+       * Each and Every function in Js have proprty called Prototype include constructor function
+       *
+       * All the objects created by constructor function have acces to all the properties and methods have constructor function
+       */
+
+      const Person = function (firstName, birthYear) {
+        // Instance Properties
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+      };
+
+      const jonas = new Person("Jonas", 1991);
+      const abhishek = new Person("Abhishek", 2017);
+      const jack = new Person("Jack", 2019);
+
+      // Prototype Property
+      console.log(Person.prototype);
+
+      Person.prototype.calcAge = function () {
+        console.log(2037 - this.birthYear);
+      };
+
+      jonas.calcAge();
+      abhishek.calcAge();
+      jack.calcAge();
+
+      console.log(jonas.__proto__);
+      console.log(jonas.__proto__ === Person.prototype);
+
+      console.log(Person.prototype.isPrototypeOf(jonas));
+      console.log(Person.prototype.isPrototypeOf(abhishek));
+      console.log(Person.prototype.isPrototypeOf(Person));
+
+      Person.prototype.species = "Homo Sapiens";
+      console.log(jonas, abhishek);
+
+      // Own property is those who directly attached to the Object not inherited
+      console.log(jonas.hasOwnProperty("firstName"));
+      console.log(jonas.hasOwnProperty("species"));
+    </script>
+  </body>
+</html>

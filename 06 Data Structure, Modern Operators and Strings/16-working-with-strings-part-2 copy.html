@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Working With Strings 2
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Working With Strings Part 2</h1>
+    <script>
+      "use strict";
+      /**
+       * Working With Strings 2
+       *
+       */
+
+      const airline = "TAP Air Portugal";
+
+      // Changing the case of strings
+      console.log(airline.toLowerCase());
+      console.log(airline.toUpperCase());
+
+      // Fix capitalization in passenger name
+      const passenger = "aBhiSheK";
+      const passengerLower = passenger.toLowerCase();
+      const passengerCorrect =
+        passengerLower[0].toUpperCase() + passengerLower.slice(1);
+      console.log(passengerCorrect);
+
+      // Comparing User input email
+      const email = "hello@jonas.io";
+      const loginEmail = "  Hello@Jonas.Io \n";
+
+      const lowerEmail = loginEmail.toLowerCase();
+      const trimmedEmail = lowerEmail.trim(); //Remove Spaces
+      console.log(trimmedEmail);
+
+      const normalizedEmail = loginEmail.toLowerCase().trim();
+      console.log(normalizedEmail);
+      console.log(email === normalizedEmail);
+      //Note trimStart() and trimEnd() for remove white space from start and end
+
+      // Replacingc-- replace method also case sensitive
+      const priceGB = "288,97£";
+      const priceUS = priceGB.replace("£", "$").replace(",", "."); //replace only first occurence
+      console.log(priceUS);
+
+      const announcement =
+        "All Passengers Come to barding door 23. Boarding door 23!";
+      console.log(announcement.replace("door", "gate"));
+      console.log(announcement.replaceAll("door", "gate"));
+
+      // By Regex
+      console.log(announcement.replace(/door/g, "gate"));
+
+      // return Booleans Methods
+      const plane = "Airbus A320neo";
+      console.log(plane.includes("320")); // search these words  in string
+      console.log(plane.includes("Boeing"));
+      console.log(plane.includes("A0"));
+      console.log(plane.startsWith("Air")); //start with these three letters
+      console.log(plane.startsWith("Aib"));
+
+      if (plane.startsWith("Airbus") && plane.endsWith("neo"))
+        console.log("Part of the New Airbus Family");
+
+      // Practice Exercise
+      const checkBaggage = function (items) {
+        const baggage = items.toLowerCase();
+        console.log(
+          baggage.includes("knife") || baggage.includes("gun")
+            ? "You Were NOT allowed on board"
+            : "Welcome a borad!"
+        );
+      };
+
+      checkBaggage("I have a Laptop, some Food and a pocket Knife");
+      checkBaggage("Socks and camera");
+      checkBaggage("Got some snacks and a gun for protection");
+    </script>
+  </body>
+</html>

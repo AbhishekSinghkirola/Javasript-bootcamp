@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Javascript Fundamental 2 - Functions Declaration vs Expressions
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Functions Declaration vs Expressions</h1>
+    <script>
+      // Declaration of function
+
+      //   Function to calculate person's age
+      function calcAge1(birthYear) {
+        // const age = 2023 - birthYear;
+        // return age;
+
+        return 2023 - birthYear;
+      }
+
+      const age1 = calcAge1(1991);
+
+    // Function Expression
+    // In function expression we cannot use function before initialization but not in function declarations
+      const calcAge2 = function (birthYear) {
+        return 2023 - birthYear;
+      };
+      const age2 = calcAge2(1991);
+      console.log(age1, age2)
+    </script>
+  </body>
+</html>

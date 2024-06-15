@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Basic Array Operations</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Basic Array Operations (Methods)</h1>
+    <script>
+      /**
+       * Javascript has some in built functions known as methods
+       * Some Basic Array Methids are :
+       * **/
+
+      //   Push
+      const friends = ["Ram", "Ajay", "Sachin"];
+      // push is a method which add the given value in last place in an array and it will return the length of the new array
+      const newLength = friends.push("Sanjay");
+      console.log(friends, newLength);
+
+      // Unshift - It add the element on the front of an array and it also return the length of new array
+      friends.unshift("Raj");
+      console.log(friends);
+
+      // Pop - rmove the last element of an array and it reurns the removed element
+      friends.pop(); //last
+      // We cn use it again anad again
+      const popped = friends.pop();
+      console.log(friends);
+      console.log(popped);
+
+      // Shift - remove first element of an array and similarly return the removed element
+      friends.shift();
+      friends.push(23);
+      console.log(friends);
+
+      // Index of - tell us in which position the certail element is in the array it check strict ie. do not use type coercion
+      console.log(friends.indexOf("Ram"));
+      console.log(friends.indexOf("John")); //Not Exsist - so return -1
+      console.log(friends.indexOf("23")); //Not Exsist - so return -1
+
+      // includes - return true if element present in the array otherwise retun false - it check strict ie. do not use type coercion
+      console.log(friends.includes("Ram")); // exsist true
+      console.log(friends.includes("John")); // not exsist fasle
+      console.log(friends.includes("23")); // not exsist fasle
+
+      //   Use case in if condition we do not prefer indexof here becz if index is o then it will turn to false so it is bug for us
+      if (friends.includes("Ram")) {
+        console.log("You have a freind called Ram");
+      }
+    </script>
+  </body>
+</html>

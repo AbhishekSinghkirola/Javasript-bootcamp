@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Summarize Data Structures
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Summarize Data Structures - Which Data Structure To Use
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * summarize Data Structures - Which Data Structure To Use
+       *
+       * Data Sources
+       * 1. Data is Present in our
+       * 2. Data comes from UI - like DOM or user input
+       * 3. Data Come from External Sources - like webAPi
+       *
+       * API - Apllication Programming Interface
+       *
+       *
+       * Collections Of Data
+       * we need data structure for collection data  - arrays, sets , objects, maps
+       * 1. when we have simple list just use Arrays
+       * 2. When we have key value pairs use Objects or Maps
+       *
+       * We have data in mostly JSON format
+       *
+       * SETS vs ARRAYS
+       *
+       * -- ARRAYS
+       * 1. when u need ordered list of values(might contain duplicates)
+       * 2. when u need to manipulate data
+       * eg: tasks = ['Code','Eat','Code'] // ["code", "Eat", "Code"]
+       *
+       * -- SETS
+       * 1. when u need to work with unique values
+       * 2. use when high performance is really important
+       * 3. use to remove duplicates from arrays
+       * eg: tasks = new Set(['Code','Eat','Code']) // {"Code", "Eat"}
+       *
+       * OBJECTS VS MAPS
+       *
+       * -- OBJECTS
+       * 1. More traditional key/value store
+       * 2. easier to write and access values with . and []
+       * 3. use when u need to include methods (functions)
+       * 4. use When working with JSON (can convert to map)
+       *eg :
+          const task = {
+          task : 'Code',
+          date : 'today',
+          repeat: true
+         }
+       *
+       * -- MAPS
+       * 1. Better Performance
+       * 2. keys can have any data type
+       * 3. easy to iterate
+       * 4. easy to compute type
+       * 5. use when you simply need to map key to values
+       * 6. use when u need keys that are not strings
+       * eg :   
+       * const task = new Map([
+        ["task", "Code"],
+        ["dat", "today"],
+        [false, "start Coding"],
+      ]);
+       */
+    </script>
+  </body>
+</html>

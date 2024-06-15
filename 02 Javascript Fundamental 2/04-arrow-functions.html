@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Arrow Functions</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Arrow Functions</h1>
+    <script>
+      /**
+       * Arrow Function
+       * Introduced in ES6
+       * A shorter form of function expression that for easier or faster to write a function
+       * **/
+
+      const calcAge3 = (birthYear) => 2037 - birthYear;
+      const age3 = calcAge3(1991);
+      console.log(age3);
+
+      //  Function to check how many years left until retirement
+    //   const yearsUntilRetirement = (birthYear) => {
+    //     const age = 2037 - birthYear;
+    //     const retirement = 65 - age;
+    //     return retirement;
+    //   };
+      const yearsUntilRetirement = (birthYear, firstName) => {
+        const age = 2037 - birthYear;
+        const retirement = 65 - age;
+        return `${firstName} retires in ${retirement} Years`;
+      };
+      console.log(yearsUntilRetirement(1991,'John'));
+      console.log(yearsUntilRetirement(1961,'Bob'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Skills & Editor Setup - Coding Challenge 1</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto Slab', serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coding Challenge 1 - Calculate BMI</h1>
+    <script>
+      /*
+        Given an array of forecasted maximum temperatures, the thermometer displays a string with these temperatures.
+        Example: [17, 21, 23] will print "... 17ºC in 1 days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+        Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console.
+        Use the problem-solving framework: Understand the problem and break it up into sub-problems!
+        TEST DATA 1: [17, 21, 23]
+        TEST DATA 2: [12, 5, -5, 0, 4]
+    */
+      // 1) Understanding the problem
+      // - Array transformed to string, separated by ...
+      // - What is the X days? Answer: index + 1
+      // 2) Breaking up into sub-problems
+      // - Transform array into string
+      // - Transform each element to string with ºC
+      // - Strings needs to contain day (index + 1)
+      // - Add ... between elements and start and end of string
+      // - Log string to console
+      const data1 = [17, 21, 23];
+      const data2 = [12, 5, -5, 0, 4];
+      console.log(`... ${data1[0]}ºC ... ${data1[1]}ºC ... ${data1[2]}ºC ...`);
+      const printForecast = function (arr) {
+        let str = '';
+        for (let i = 0; i < arr.length; i++) {
+          str += `${arr[i]}ºC in ${i + 1} days ... `;
+        }
+        console.log('...' + str);
+      };
+      printForecast(data1);
+    </script>
+  </body>
+</html>

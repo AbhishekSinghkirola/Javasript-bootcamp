@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Object Oriented Programming - Constructor Functions and the New Operator
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Constructor Functions and the New Operator
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * Constructor Functions and the New Operator
+       *
+       * Constructor function is not a feature of JS it is a pattern developed by some other developer so just everyone uses this
+       */
+
+      //  Create an object with constructor function (only functionn declaration and function expression becz arrow function does not have this keyword)
+
+      const Person = function (firstName, birthYear) {
+        // console.log(this);
+
+        // Instance Properties
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+
+        // It is a bad Practice
+        this.calcAge = function () {
+          console.log(2037 - this.birthYear);
+        };
+      };
+
+      // New call this function
+      /**
+       * 1. new {} empty object were created
+       * 2. this keyword is set to this newly object
+       * 3. this object is linked to prototype
+       * 4. function automatically return that empty object from beginning
+       */
+      const jonas = new Person("Jonas", 1991);
+      console.log(jonas);
+
+      const abhishek = new Person("Abhishek", 2017);
+      const jack = new Person("Jack", 2019);
+      console.log(abhishek, jack);
+
+      const jay = {
+        fName: "Jay",
+      };
+
+      console.log(jonas instanceof Person);
+      console.log(jay instanceof Person);
+
+      jonas.calcAge();
+    </script>
+  </body>
+</html>

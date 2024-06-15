@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Truthy and Falsy Values</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Truthy and Falsy Values</h1>
+    <script>
+      //Falsy Values are those which actually not false but become false when it converts into a boolean
+      //Js have five falsy values: 0, '', undefined, null, NaN
+      console.log(Boolean(0));
+      console.log(Boolean(undefined));
+      console.log(Boolean("Abhishek"));
+      console.log(Boolean({}));
+      console.log(Boolean([]));
+      console.log(Boolean(""));
+
+      const money = 0;
+      if (money) {
+        console.log("Don't Spend it all ;)");
+      } else {
+        console.log("You Should get a job!");
+      }
+
+    //   let height;;
+      // let height = 123;
+      let height = 0; //it is a bug
+      if (height) {
+        console.log("YAY! Height is defined");
+      } else {
+        console.log("Height is UNDEFINED");
+      }
+    </script>
+  </body>
+</html>

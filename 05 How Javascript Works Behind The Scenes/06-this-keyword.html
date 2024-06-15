@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How Javascript Works Behind The Scenes - The This Keyword</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">The This Keyword</h1>
+    <!-- <button class="btn">Button1</button>
+    <button class="btn">Button2</button>
+    <button class="btn">Button3</button> -->
+    <script>
+      "use strict";
+      /**
+       * THIS KEYWORD
+       * -- this keyword/variable is created for every execution context (every function) that takes the value of (point of) the owner of the function in which the this keyword is use
+       *
+       * this is not static, it depends on how the fucntion is called and its value is only assigneed when the function is called.
+       *
+       * How function is called :
+       *
+       * 1. Method : function attached with object
+       * -- this = object that is calling the method
+       *
+       * 2. simple function call
+       * -- this = undefined (only in strict mode without strict mode it points to the global object which is window)
+       *
+       * 3. Arrow function
+       * -- this = this of surrounding function/ outer parent function (lexical this)
+       *
+       * 4. Event Listener
+       * -- this = Dom Element that the handler attached to
+       */
+
+      //  const obj = {
+      //     name : "Abhishek",
+      //     birthYear : 2001,
+      //     calcAge : function () {
+      //         console.log(this)
+      //         return 2023 - this.birthYear
+      //     }
+      //  }
+
+      //  console.log(obj.calcAge());
+
+      // function sum () {
+      //     console.log(this);
+      //     console.log(2 + 3);
+      // }
+      // sum();
+
+      // const sum2 = () => {
+      //     console.log(this);
+      //     console.log(2 +3);
+      // }
+
+      // sum2()
+
+      // document.body.addEventListener('keydown', function (){
+      //     console.log(this);
+      // })
+
+      //   const btns = document.querySelectorAll(".btn");
+      //   for (let i = 0; i < btns.length; i++) {
+      //     btns[i].addEventListener("click", function () {
+      //       console.log(this);
+      //       console.log(this.textContent);
+      //     });
+      //   }
+
+      //   <!-- ------------------------------ Practise ------------------------------- -->
+
+      // console.log(this); //refer to the global object which is window
+
+      // const obj = {
+      //   name: "Abhishek",
+      //   birthYear: 2001,
+      //   calcAge: function () {
+      //     console.log(this);
+      //     return 2023 - this.birthYear;
+      //   },
+      // };
+      // const obj2 = {
+      //   name: "Rahul",
+      //   birthYear: 2003,
+      //   // calcAge: obj.calcAge,
+      // };
+      // obj2.calcAge = obj.calcAge;
+
+      // console.log(obj2.calcAge());
+
+      // const obj = {
+      //   name: "Abhishek",
+      //   birthYear: 2001,
+      //   calcAge: () => {
+      //     console.log(this);
+      //     return 2023 - this.birthYear;
+      //   },
+      // };
+
+      // console.log(obj.calcAge());
+    </script>
+  </body>
+</html>

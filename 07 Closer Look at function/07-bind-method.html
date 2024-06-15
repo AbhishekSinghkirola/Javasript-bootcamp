@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>A Closer Look at Functions - The Bind Method</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
+      .buy,
+      .poll {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        position: absolute;
+        top: 2rem;
+      }
+      .buy {
+        left: 2rem;
+      }
+      .poll {
+        right: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Bind Method</h1>
+    <button class="buy">Buy new plane 🛩</button>
+    <button class="poll">Answer poll ⁉️</button>
+    <script>
+      "use script";
+      // The Bind Method - bind the this keyword manually
+      const lufthansa = {
+        airline: "Lufthansa",
+        iataCode: "LH",
+        bookings: [],
+        book(flighNum, name) {
+          console.log(
+            `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flighNum}`
+          );
+          this.bookings.push({ flight: `${this.iataCode}${flighNum}`, name });
+        },
+      };
+
+      const euroWings = {
+        airline: "EuroWings",
+        iataCode: "Ew",
+        bookings: [],
+      };
+
+      const book = lufthansa.book;
+
+      const swiss = {
+        airline: "Swiss",
+        iataCode: "LX",
+        bookings: [],
+      };
+
+      // Biind the this keyword and return a new function
+      const bookEW = book.bind(euroWings);
+      const bookLH = book.bind(swiss);
+      const bookSW = book.bind(swiss);
+      bookEW(23, "Steven Williams");
+      console.log(euroWings);
+
+      // specifying parts of argument beforehand this pattern is partial applicTION
+      const bookEw23 = book.bind(euroWings, 23);
+      bookEw23("Abhsihek Singh");
+      bookEw23("Martha Cooper");
+
+      // With event listener
+      lufthansa.planes = 300;
+      lufthansa.buyPlanes = function () {
+        this.planes++;
+        console.log(this.planes);
+      };
+
+      document
+        .querySelector(".buy")
+        .addEventListener("click", lufthansa.buyPlanes.bind(lufthansa));
+
+      // Partial Application
+      const addText = (rate, value) => value + value * rate;
+      console.log(addText(0.1, 200));
+
+      const addVAT = addText.bind(null, 0.23);
+      console.log(addVAT(100));
+      console.log(addVAT(23));
+
+      const addTaxRate = function (rate) {
+        return function (value) {
+          return value + value * rate;
+        };
+      };
+
+      const addVAT2 = addTaxRate(0.23);
+      console.log(addVAT2(23));
+    </script>
+  </body>
+</html>

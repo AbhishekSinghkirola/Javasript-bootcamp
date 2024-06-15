@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Basic Operators</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basic Operators</h1>
+    <script>
+      console.log(
+        "Operators Are basically used for transforming values or combining values"
+      );
+      console.log("");
+      console.log(
+        "There are many typees of operators like mathematical operators, assignment operators, comparison operators, logical operators etc"
+      );
+      console.log("");
+      console.log("Arithmatic Opertaors");
+      console.log("Calculate the age difference using - opeator");
+
+      const currentYear = 2023;
+      const ramAge = currentYear - 2001;
+      const rohitAge = currentYear - 2003;
+      console.log(ramAge, rohitAge);
+
+      console.log("");
+
+      console.log(ramAge * 2, ramAge / 2, 2 ** 3);
+
+      const firstName = "Abhishek";
+      const lastName = "Singh";
+      console.log(firstName + " " + lastName);
+      console.log("");
+      console.log("Assignment Operator");
+
+      let x = 10 + 5; //15
+      x += 10; // x = x + 10
+      x *= 4; // x = x * 4;
+      x++; // x= x + 1;
+      x--;
+      console.log(x);
+
+      console.log("");
+      console.log("Comparison Operators");
+
+      console.log(ramAge > rohitAge); //< , <=, >=
+      console.log(ramAge >= 18);
+
+      const isFullAge = ramAge >= 18;
+      console.log(currentYear - 1999 > currentYear - 2018);
+    </script>
+  </body>
+</html>

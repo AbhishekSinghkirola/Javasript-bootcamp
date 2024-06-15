@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Destructuring Objects
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Destructuring Objects</h1>
+    <script>
+      "use strict";
+      /**
+       * Destructuring Objects
+       *
+       * Use curly Brace to s=destructure objects and set variable name same as key (no order or sequence matter while desctructuring)
+       */
+
+      const restaurant = {
+        name: "Classico Italian",
+        location: "New Delhi, Shimla, Mumbai",
+        categories: ["Indian", "South Indian", "Chinese", "Italian"],
+        starterMenu: ["Chilli Potato", "Garlic Bread", "kabab", "Paneer Tikka"],
+        mainMenu: ["Pizza", "Pasta", "Chowmein"],
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 22,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0, //open 24 hours
+            close: 24,
+          },
+        },
+
+        order: function (starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+
+        orderdelivery: function ({
+          starterIndex = 1,
+          mainIndex = 0,
+          address,
+          time = "20:00",
+        }) {
+          console.log(
+            `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+          );
+        },
+      };
+
+      const { name, openingHours, categories } = restaurant;
+      console.log(name, categories, openingHours);
+
+      // But want to custom variable names
+      const {
+        name: restaurantName,
+        openingHours: hours,
+        categories: tags,
+      } = restaurant;
+      console.log(restaurantName, hours, tags);
+
+      // Also set default values
+      const { menu = [], starterMenu: starters = [] } = restaurant;
+      console.log(menu, starters);
+
+      // mutating variables
+      let a = 111;
+      let b = 999;
+
+      const obj = { a: 23, b: 7, c: 14 };
+      ({ a, b } = obj);
+      console.log(a, b);
+
+      // Nested Objects
+      const {
+        fri: { open: o, close: c },
+      } = openingHours;
+
+      console.log(o, c);
+
+      restaurant.orderdelivery({
+        time: "22:30",
+        address: "12 kirti Nagar",
+        mainIndex: 2,
+        starterIndex: 2,
+      });
+      restaurant.orderdelivery({
+        address: "12 kirti Nagar",
+        mainIndex: 2,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Equality Operators</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Equality Operators</h1>
+    <script>
+      const age = 18;
+      //   === strict equality operator
+      if (age === 18) console.log("You just became an Adult :D");
+      //   === loose equality operator (it does type coersion)
+      if (age == 18) console.log("You just became an Adult :D");
+
+      const favourite = Number(prompt("What's your Number?"));
+      console.log(favourite);
+      console.log(typeof favourite);
+      if (favourite === 23) {
+        console.log("Cool! 23 is an amazing number!");
+      } else if (favourite === 7) {
+        console.log("7 is also a cool number");
+      } else if (favourite === 9) {
+        console.log("9 is also a cool number");
+      } else {
+        console.log("Number is not 23 or 7 or 9");
+      }
+
+    //   Strict 
+      if(favourite !== 23) {
+        console.log('why not 23')
+      }
+    //   Loose
+      if(favourite != 23) {
+        console.log('why not 23')
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Object Oriented Programming - Encapsulation : Protected Properties and
+      Methods
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Encapsulation : Protected Properties and Methods
+    </h1>
+    <script>
+      "use strict";
+      /**
+       * Encapsulation : Protected Properties and Methods
+       *
+       * Js Classes do not provide real data privacy or encapsulation
+       **/
+
+      class Account {
+        constructor(owner, currency, pin) {
+          this.owner = owner;
+          this.currency = currency;
+          this._pin = pin;
+          this._movements = []; //Protected Property
+          this.locale = navigator.language;
+
+          console.log(`Thanks For Opening an Account ${owner}`);
+        }
+
+        // Public Interface
+        getMovements() {
+          return this._movements;
+        }
+
+        deposit(value) {
+          this._movements.push(value);
+        }
+
+        withdrawal(value) {
+          this.deposit(-value);
+        }
+
+        _approveLoan(val) {
+          return true;
+        }
+
+        requestLoan(val) {
+          if (this._approveLoan(val)) {
+            this.deposit(val);
+            console.log("Loan Approved!");
+          }
+        }
+      }
+
+      const acc1 = new Account("Jonas", "EUR", 1111);
+
+      // acc1._movements.push(250);
+      // acc1._movements.push(-140);
+
+      acc1.deposit(250);
+      acc1.withdrawal(140);
+
+      acc1.requestLoan(1000);
+      // we not even be allowed to use publicly
+      acc1.approveLoan(1000);
+
+      acc1.getMovements();
+
+      console.log(acc1);
+
+      // console.log(acc1._pin);
+    </script>
+  </body>
+</html>

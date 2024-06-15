@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Oriented Programming - Static Methods</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Static Methods</h1>
+    <script>
+      "use strict";
+      /**
+       * Static Methods
+       *
+       * we saw that Array.from() mthod it is not applicable for all the arrays becz it in not in the prototype
+       * it simply attached with the constructor function it is a simple method and it is attachd to array just to
+       * know that it is related to arrays
+       *
+       *
+       * same we have Number.parseInt() it is connectedwith Number Namespace
+       **/
+
+      const Person = function (firstName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+      };
+
+      Person.hey = function () {
+        console.log(`Hey There 👋`);
+        console.log(this);
+      };
+
+      const jonas = new Person("Jonas", 2003);
+      Person.hey();
+
+      class PersonCl {
+        constructor(firstName, birthYear) {
+          this.firstName = firstName;
+          this.birthYear = birthYear;
+        }
+
+        // Instance Methods
+        // Methods will be added to the prototype property of the class
+        calcAge() {
+          console.log(2037 - this.birthYear);
+        }
+
+        greet() {
+          console.log(`Hey ${this.firstName}`);
+        }
+
+        // Static Method
+        static hey() {
+          console.log(`Hey There 👋`);
+          console.log(this);
+        }
+      }
+
+      PersonCl.hey();
+    </script>
+  </body>
+</html>

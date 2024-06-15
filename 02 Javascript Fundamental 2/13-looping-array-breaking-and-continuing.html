@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Javascript Fundamental 2 - Looping Array Breaking and Continuing
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Looping Array, Breaking and Continuing</h1>
+    <script>
+      // Looping in array
+      const abhishekArray = [
+        "Abhishek",
+        "Singh",
+        2023 - 1999,
+        "Programmer",
+        ["Sanjay", "Ravi", "Kishan"],
+        true,
+      ];
+      const types = [];
+
+      for (let i = 0; i < abhishekArray.length; i++) {
+        // reaading from array
+        console.log(abhishekArray[i], typeof abhishekArray[i]);
+        // Filling array
+        // types[i] = typeof abhishekArray[i];
+        types.push(typeof abhishekArray[i]);
+      }
+
+      console.log(types);
+
+      const years = [1991, 2007, 1969, 2020];
+      const ages = [];
+      for (let i = 0; i < years.length; i++) {
+        ages.push(2037 - years[i]);
+      }
+      console.log(ages);
+
+      // continue and break statements
+      // continue statement escape the current iteration
+        for (let i = 0; i < abhishekArray.length; i++) {
+          if(typeof abhishekArray[i] !== 'string') continue;
+          console.log(abhishekArray[i], typeof abhishekArray[i]);
+      }
+      // Break statement terminate the loop 
+        for (let i = 0; i < abhishekArray.length; i++) {
+          if(typeof abhishekArray[i] === 'number') break;
+          console.log(abhishekArray[i], typeof abhishekArray[i]);
+      }
+    </script>
+  </body>
+</html>

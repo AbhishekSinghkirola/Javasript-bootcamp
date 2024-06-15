@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Coding Challenge 2</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coding Challenge 2 - Calculate BMI V 2.O</h1>
+    <script>
+      /*
+        Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
+        1. Print a nice output to the console, saying who has the higher BMI. The message can be either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+        2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+        HINT: Use an if/else statement 😉
+        GOOD LUCK 😀
+      */
+
+      // const marksWeight = 78;
+      // const marksHeight = 1.69;
+      // const johnWeight = 92;
+      // const johnHeight = 1.95;
+      const marksWeight = 95;
+      const marksHeight = 1.88;
+      const johnWeight = 85;
+      const johnHeight = 1.76;
+
+      const BMIMarks = marksWeight / marksHeight ** 2;
+      const BMIJohn = johnWeight / (johnHeight * johnHeight);
+
+      console.log(BMIMarks, BMIJohn);
+      if (BMIMarks > BMIJohn) {
+        console.log("Mark's BMI Higher than John's");
+      } else {
+        console.log("John's BMI Higher than MArks's");
+      }
+
+      if (BMIMarks > BMIJohn) {
+        console.log(`Mark's BMI(${BMIMarks}) Higher than John's(${BMIJohn})!`);
+      } else {
+        console.log(`John's BMI(${BMIJohn}) Higher than Marks's(${BMIMarks})!`);
+      }
+    </script>
+  </body>
+</html>

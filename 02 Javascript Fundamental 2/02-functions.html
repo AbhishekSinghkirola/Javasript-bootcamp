@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Functions</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Functions</h1>
+    <script>
+      /**
+       * Functions
+       * A function is simply a peice of code that we can reuse over and over again
+       * **/
+
+      /*
+            Syntax
+            function functionName() {
+                //function body
+            } 
+        */
+
+      // function which logs something in console
+      function logger() {
+        console.log("My Name is Abhishek");
+      }
+      //  Invoking the function /running /calling the function
+      logger();
+      logger();
+      logger();
+
+      /**
+       * A function can also receive data or return data
+       * **/
+
+      //   The variables in parenthesis known as parameters
+      function fruitProcessor(apples, oranges) {
+        console.log(apples, oranges);
+        const juice = `Juice with ${apples} apples and ${oranges} oranges`;
+        return juice;
+      }
+      //   The values/variables in this parenthesis give below is known as argument
+      const appleJuice = fruitProcessor(5, 0);
+      console.log(appleJuice);
+      console.log(fruitProcessor(5, 0));
+      const appleOrangejuice = fruitProcessor(2, 4);
+      console.log(appleOrangejuice);
+
+    </script>
+  </body>
+</html>

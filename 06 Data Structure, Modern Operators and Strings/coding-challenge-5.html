@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Coding Challenge 5
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coding Challenge 4 - Return Camelcase text</h1>
+    <script>
+      "use strict";
+      const getCode = (str) => str.slice(0, 3).toUpperCase();
+      const flights =
+        "_Delayed_Departure;fao93766109;txt12133758440;11:25+_Arrival;bru0943385722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
+      // 🔴 Delayed Departure from FAO to TXL (11h25)
+      //              Arrival from BRU to FAO (11h45)
+      //   🔴 Delayed Arrival from HEL to FAO (12h05)
+      //            Departure from FAO to LIS (12h30)
+      for (const flight of flights.split("+")) {
+        const [type, from, to, time] = flight.split(";");
+        const output = `${
+          type.startsWith("_Delayed") ? "🔴" : ""
+        }${type.replaceAll("_", " ")} from ${getCode(from)} to ${getCode(
+          to
+        )} (${time.replace(":", "h")})`.padStart(36);
+        console.log(output);
+      }
+    </script>
+  </body>
+</html>

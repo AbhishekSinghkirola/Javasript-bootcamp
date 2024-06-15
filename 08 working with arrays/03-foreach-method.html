@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working With Arrays - ForEach Method</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">ForEach Method</h1>
+    <script>
+      "use strict";
+      /*
+        ForEach Method
+
+        Used to iterate over an object
+      */
+      const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+      console.log(
+        "Print positive values as deposit and negative as withdraw using for of loop"
+      );
+      console.log("------------- FOROF ---------------------");
+      // for (const movement of movements) {
+      for (const [i, movement] of movements.entries()) {
+        // Also wants Index
+        // console.log(`${movement > 0 ? "You Deposited" : "You Withdraw"} ${movement}`);
+        if (movement > 0) {
+          console.log(`Movement ${i + 1} : You deposited ${movement}`);
+        } else {
+          console.log(`Movement ${i + 1} :You withdraw ${Math.abs(movement)}`);
+        }
+      }
+
+      // ForEach Methods ->Higher Order Function Require a Callback Function
+      console.log(
+        "Print positive values as deposit and negative as withdraw using for forEach Method"
+      );
+      console.log("---------------------- FOREACH ---------------");
+      movements.forEach(function (mov, i, arr) {
+        if (mov > 0) {
+          console.log(`Movement ${i + 1} :You deposited ${mov} from ${arr}`);
+        } else {
+          console.log(
+            `Movement ${i + 1} :You withdraw ${Math.abs(mov)} from ${arr}`
+          );
+        }
+      });
+
+      // 0 : function(200)
+      // 1: function (450)
+      // 2 : function (-400)
+      // ...
+    </script>
+  </body>
+</html>

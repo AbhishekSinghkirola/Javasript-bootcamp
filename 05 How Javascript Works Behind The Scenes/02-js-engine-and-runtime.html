@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How Javascript Works Behind The Scenes - The Javascript Engine And
+      Runtime Javascript
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">The Javascript Engine And Runtime</h1>
+    <script>
+      /**
+       * You can use Js everywhere
+       *
+       * How?
+       * You need an Jvascript Environment
+       * -- An js Enviromnet is like a container in which all the things available which u need to run your js in which plateform here we run js in our browser; Js environment includes js engine which is the heart of js and web api's (like timers, dom, fetch, storage etc) and have an garbage collector, callbackqueue, microtask queue, an last but not least event loop
+       *
+       *
+       * So what is JS Engine?
+       * -- Js Engine is a computer program which is written in c++ that executed our code.
+       * All browser have its own js engine google has (V8 engine )(the fastes from all), Mozilla have(spiderMonkey) and Edge have (Chakra)
+       *
+       * How its Work ?
+       * -- let first look hw our progrm executes basically we need to change  oour code to machine code you know about that
+       * here first our source code break down into tokes and then parse (the syntax parser help in parsing) it will create an AST(Abstract syntax Tree) breakdown our code in some json form but it is not our concern then the compiler or intrpreter comes in play
+       * the compiler is basically which compiles the whole source code in once and then create an optimized binary file then computer executes that file; while interprete is just goes throughh each line and executes it but js
+       * uses just in time compiled (JIT) so it uses bith compiler and interpetr working toghther to make an optimized code then execute along with
+       *
+       * Js Engine consist Heap/Memory Heap and Call stack
+       * Call stack :- where all the execution done
+       * Heap - Memoryy space where all our object allocated
+       * heap is connected with call stack and garbage collector and all to work together
+       *
+       * V8 Architecture
+       * source code => parsing along with AST => interpreter (generate bytes fast) work with compiler (optimize) => Byte
+       *
+       * v8 - interpreter known as Ignition
+       * v8 compiler - known as Turbo Fan
+       *
+       */
+    </script>
+  </body>
+</html>

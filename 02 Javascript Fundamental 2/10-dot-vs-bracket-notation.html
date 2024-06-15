@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Dot vs Bracket Notation</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Dot vs Bracket Notation</h1>
+    <script>
+      /**
+       * Let's see how to retrieve data from obects and update data in objects from both dot and bracket notation
+       * **/
+      const abhishek = {
+        //key or property : value
+        firstName: "Abhishek",
+        lastName: "Singh",
+        age: 2034 - 1999,
+        job: "Programmer",
+        friends: ["Ram", "sujit", "Kishan"],
+      };
+
+      console.log(abhishek);
+
+      /* How to Retrieve Property using dot notation */
+      console.log(abhishek.lastName);
+      // so the dot(.) after abhishek in above example is an operator which retrieves the property value
+
+      /* How to Retrieve Property using Bracket notation */
+      console.log(abhishek["lastName"]);
+
+      /**
+       *  The Difference Between Bracket Notation and dot naotaion is that we can put any expression inside bracket notation we cannot explicitly do it and then put. eg.
+       * **/
+      const nameKey = "Name";
+      console.log(abhishek["first" + nameKey]);
+      console.log(abhishek["last" + nameKey]);
+      // In the above example we compute a propertname: we create a variable and store a value and thern in bracket notation we simple form the property name
+
+      // console.log(abhishek.'first' + nameKey) //It will gives us error - it only take actual property name not computed property name becz we cannot put expressions in it
+
+      const interstedIn = prompt(
+        "What Do you know about Abhishek? Choose between firstName, lastName, age, job, and friends"
+      );
+      // console.log(abhishek.interstedIn) //Doesn't Work because it cannot evalutae interstedIn
+      console.log(abhishek[interstedIn]);
+
+      // update prgrrm if user choose invalid property
+      if (abhishek[interstedIn]) {
+        console.log(abhishek[interstedIn]);
+      } else {
+        console.log(
+          "Wrong request! Choose between firstName, lastName, age, job, and friends"
+        );
+      }
+
+      /**
+        How to add values inside object
+      **/
+      abhishek.location = "Delhi";
+      abhishek["subject"] = "Javascript";
+      console.log(abhishek);
+
+      // Cahllenge - write this sentence dynamically
+      // Abhsihek has 3 frinds and his best friend is called Ram
+
+      console.log(
+        `${abhishek.firstName} has ${abhishek.friends.length} friends and his best friend is called ${abhishek.friends[0]}`
+      );
+    </script>
+  </body>
+</html>

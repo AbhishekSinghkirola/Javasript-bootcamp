@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Structures, Modern Operators and Strings - SETS</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">SETS</h1>
+    <script>
+      "use strict";
+      /**
+       * SETS
+       * Another Data Structures
+       * sets have unique values
+       * sets are also iterables
+       * in sets order of element is irrrelevant
+       *
+       * Retrieving vaues  not possible in set
+       */
+
+      //    Pass any iterables in Set
+
+      const orderSet = new Set(["Pizza", "Burger", "Pizza", "Pasta", "Pizza"]);
+      console.log(orderSet);
+
+      console.log(new Set("Abhishek"));
+
+      //   Get the length of sets
+      console.log(orderSet.size);
+
+      // Check element exsist or not in a particular set -- case sensitive
+      console.log(orderSet.has("Pizza"));
+      console.log(orderSet.has("Bread"));
+
+      // Add new element to set
+      orderSet.add("Garlic Bread");
+      orderSet.add("Garlic Bread");
+      console.log(orderSet);
+
+      //   Delete element in set
+      orderSet.delete("Burger");
+      console.log(orderSet);
+
+      //   Delete all elements from sets
+      // orderSet.clear()
+
+      //   Iterating Sets
+      for (const order of orderSet) console.log(order);
+
+      const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+      const staffUnique =[...new Set(staff)];
+      console.log(staffUnique);
+
+      console.log(new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size);
+      console.log(new Set('abhishkeeeeeeeek').size);
+
+    </script>
+  </body>
+</html>

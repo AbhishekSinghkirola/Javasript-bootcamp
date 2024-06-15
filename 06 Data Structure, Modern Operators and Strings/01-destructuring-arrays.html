@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Data Structures, Modern Operators and Strings - Destructuring Arrays
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Destructuring Arrays</h1>
+    <script>
+      "use strict";
+      /**
+       * Array Destructuring
+       * -- It was introduced in ES6
+       *
+       * Desturcturing
+       * --used to unpacking values from an array or object into separate variables or we can say that breakdown the complex data structure into simpler data structure like variable
+       *
+       * Retrieve values from an array and stored in variables
+       *
+       * Original Array not affected during desctructuring
+       */
+
+      const arr = [1, 2, 3];
+
+      //    Without destructuring
+      const a = arr[0];
+      const b = arr[1];
+      const c = arr[2];
+      console.log(a, b, c);
+
+      //   With destructuring
+      const [x, y, z] = arr;
+      console.log(x, y, z);
+
+      const restaurant = {
+        name: "Classico Italian",
+        location: "New Delhi, Shimla, Mumbai",
+        categories: ["Indian", "South Indian", "Chinese", "Italian"],
+        starterMenu: ["Chilli Potato", "Garlic Bread", "kabab", "Paneer Tikka"],
+        mainMenu: ["Pizza", "Pasta", "Chowmein"],
+
+        order: function (starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+        },
+      };
+
+      //   desctructure  onle first and second element of categories
+      const [first, second] = restaurant.categories;
+      console.log(first, second);
+
+      //   desctructure  onle first and third element of categories
+      const [first1, , third] = restaurant.categories;
+      console.log(first1, third);
+
+      //   Switch mvariables
+      let [main, secondary] = restaurant.categories;
+
+      //   without destructuirng
+      // const temp = main;
+      //   main = secondary;
+      //   secondary = temp;
+      //   console.log(main, secondary);
+
+      //   Using Destructuring
+      [main, secondary] = [secondary, main];
+      console.log(main, secondary);
+
+      //   Receive two values from an array
+      //   console.log(restaurant.order(2,0));
+      const [starter, mainCorse] = restaurant.order(2, 0);
+      console.log(starter, main);
+
+      //   Nested Destructuring
+      const nested = [2, 4, [5, 6]];
+      //   const [i, , j] = nested;
+      //   console.log(i, j);
+
+      const [i, , [j, k]] = nested;
+      console.log(i, j, k);
+
+      //   Default Values
+      //   const [p, q, r] = [5, 6];
+      const [p = 1, q = 1, r = 1] = [5, 6];
+    </script>
+  </body>
+</html>

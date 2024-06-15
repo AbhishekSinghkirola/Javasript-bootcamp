@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Data Types</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Data Types</h1>
+    <script>
+      // Thereare Two Types Of datatypes
+
+      /**
+       * Primitive and Object - except object all are of primitive types
+       *
+       * Numbers - floating point Numbers (useed form decimals and integers) eg- let age = 28;
+       * strings = sequence of characters (used for text) eg let firstName = "Abhishek";
+       * Boolean - Logical type that can only be true or false (used for taking descision) eg : let fullAge = true
+       * Undefined - value taken by the variable that is not defined yet (empty value) eg : let children;
+       * Null - Also means empty value
+       * Symbol - introduced in ES6 value that is unique and cannot be changed (Not Useful For now)
+       * BigInt - ES6 Larger Integers that number type can hold
+       *
+       * **/
+
+      //  Javascrip has dynamic Typing - we do not have to manually define the data type of the value stored in a variabl. Instead data types are determinedautomatically
+      console.log("There Are Two types of Data Types");
+      console.log("1. primitive");
+      console.log("2. Object");
+      console.log(
+        "** Except Object Everything Comes Under Primitive Data Types"
+      );
+      console.log(`There Are 7 Primitive Data Types\n1.Numbers\n2.Strings\n3.Boolean\n4.Undefined\n5.Null\n6.Symbol\n7.BigInt`);
+      console.log(`There is a typeof operator to check the data types of values`)
+      console.log(`Javascript have dynamic Typic means we can not mauall define the data type it determined automatically`)
+
+      // We cannot use variable before initialization
+      let javascriptIsFun = true;
+      console.log(javascriptIsFun);
+
+      //   typeof operator
+      let year;
+      console.log(typeof true);
+      console.log(typeof javascriptIsFun);
+      console.log(typeof "Abhishek");
+      console.log(typeof 21);
+      console.log(typeof year);
+      //effect of dynamic typing
+      year = 2023;
+      console.log(typeof year);
+    </script>
+  </body>
+</html>

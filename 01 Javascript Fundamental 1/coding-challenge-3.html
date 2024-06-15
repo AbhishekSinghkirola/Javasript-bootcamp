@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamentals 1 - Coding Challenge 3</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coding Challenge 3 - Who Wins The Trophy 🏆</h1>
+    <script>
+      /*
+        There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins the a trophy!
+        1. Calculate the average score for each team, using the test data below
+        2. Compare the team's average scores to determine the winner of the competition, and print it to the console. Don't forget that there can be a draw, so test for that as well (draw means they have the same average score).
+        3. BONUS 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. HINT: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
+        4. BONUS 2: Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy.
+        TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+        TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+        TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+        GOOD LUCK 😀
+      */
+
+      // const avgScoreDolphins = (96 + 108 + 89) / 3;
+      // const avgScoreKoalas = (88 + 91 + 110) / 3;
+
+      // console.log(avgScoreDolphins, avgScoreKoalas);
+
+      // if (avgScoreDolphins === avgScoreKoalas) {
+      //   console.log(`There is a Draw between Both th Teams`);
+      // } else    if (avgScoreDolphins > avgScoreKoalas) {
+      //   console.log(`Team Dolphins Wins the Game 🏆`);
+      // } else {
+      //   console.log(`Team Koalas Wins the Game 🏆`);
+      // }
+
+      // Bonus 1
+      const avgScoreDolphins = (97 + 112 + 80) / 3;
+      const avgScoreKoalas = (109 + 95 + 50) / 3;
+
+      console.log(avgScoreDolphins, avgScoreKoalas);
+
+      if (avgScoreDolphins > avgScoreKoalas && avgScoreDolphins >= 100) {
+        console.log(`Team Dolphins Wins the Game 🏆`);
+      } else if (avgScoreKoalas > avgScoreDolphins && avgScoreKoalas >= 100) {
+        console.log(`Team Koalas Wins the Game 🏆`);
+      } else if (
+        avgScoreKoalas === avgScoreDolphins &&
+        avgScoreDolphins >= 100 &&
+        avgScoreKoalas >= 100
+      ) {
+        console.log(`There is a Draw between Both the Teams!`);
+      }else {
+         console.log(`No One Win the Trophy 😭`);
+      }
+    </script>
+  </body>
+</html>

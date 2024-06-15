@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Introduction to Arrays</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Introduction to Arrays</h1>
+    <script>
+      /**
+       * So Lets Study aboy Data structure
+       *
+       * Arrays
+       * **/
+      // If we want to store the name of three friends without using array we have to do like this; it is not the great way so why we need data structure in js and we use array
+      const friend1 = "Ram";
+      const friend2 = "Rohit";
+      const friend3 = "Ankit";
+
+      //   Using Array
+      const friends = ["Ram", "Rohit", "Ankit"];
+      console.log(friends);
+      //   or alternative way
+      const years = new Array(1991, 1984, 2008, 2020);
+      console.log(years);
+
+      //   Accessing each element array
+      console.log(friends[0], friends[2]);
+      // Get how many element present in an array (length is an property)
+      console.log(friends.length);
+      // Get last element dynamically (we can write any expression in square brackets)
+      console.log(friends[friends.length - 1]);
+
+      friends[2] = "Kishan";
+      console.log(friends);
+
+      //   Array can hold Multiple values
+      const firstName = "Abhishek";
+      const abhishek = [firstName, "Singh", 2023 - 1991, "Programmer", friends];
+      console.log(abhishek);
+
+      const calcAge = function (birthYear) {
+        return 2037 - birthYear;
+      };
+
+      const age1 = calcAge(years[0]);
+      const age2 = calcAge(years[1]);
+      const age3 = calcAge(years[2]);
+      const age4 = calcAge(years[3]);
+      console.log(age1, age2, age3, age4);
+
+      const ages = [calcAge(years[0]), calcAge(years[years.length - 1])];
+      console.log(ages);
+    </script>
+  </body>
+</html>

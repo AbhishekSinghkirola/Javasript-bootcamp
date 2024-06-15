@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Fundamental 2 - Reviewing Functions</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Slab", serif;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, #28b487, #7dd56f);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Reviewing Functions</h1>
+    <script>
+      // those Parameter are local variable for each function so it is independent from each other ie. they were only applicable for that  block of code
+      // return keywoord immediately exit the code execution so after return whatever we play it doesn/t work 
+      const calcAge = function (birthYear) {
+        return 2037 - birthYear;
+      };
+
+      const yearsUntilRetirement = function (birthYear, firstName) {
+        const age = calcAge(birthYear);
+        const retirement = 65 - age;
+        if (retirement > 0) {
+          return retirement;
+        }else {
+          return -1; //In programming -1 is a number is which has no meaning
+        }
+        // return `${firstName} retires in ${retirement} Years`;
+      };
+
+      console.log(yearsUntilRetirement(1991, "john"));
+      console.log(yearsUntilRetirement(1970, "Mike"));
+    </script>
+  </body>
+</html>
